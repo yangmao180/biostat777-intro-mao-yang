@@ -1,0 +1,74 @@
+---
+---
+title: ""
+page-layout: full
+---
+
+```{=html}
+<style>
+.card {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.card img {
+  border: none !important;
+}
+</style>
+```
+
+:::::::::::: column-page
+::::::::::: grid
+:::: {.g-col-12 .g-col-md-4 .text-center}
+![](images/mao-01.jpg){.rounded-circle}
+
+# Mao Yang {.mt-3}
+
+### (He)
+
+#### ScM Student
+
+#### Biochemistry and Molecular Biology
+
+##### Johns Hopkins University
+
+::: {.social-links .mt-3}
+[📧Email](myang112@jh.edu)
+:::
+::::
+
+:::::::: {.g-col-12 .g-col-md-8}
+## 💼 Personal Summary
+
+Hi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on invesigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking photos, fencing and keeping two cats, called Orangey and Mimi.
+
+**Fun facts:**
+
+-   My MBTI is INFJ
+
+-   My glass is magnifying lens because I have presbyopia
+
+## 🎨 Things I Enjoy
+
+::::: {.row .g-3}
+:::: col-md-6
+::: {.card .h-100}
+![](images/Jijian.jpg){.card-img-top}
+
+### **Fencing**
+
+The one on the left side is me.
+:::
+::::
+:::::
+
+:::: col-md-6
+::: {.card .h-100}
+### ![](images/Cats.png){.card-img-top}**Orangey** and **Mimi**
+
+Living with two adorable cats who bring joy and companionship to my daily life.
+:::
+::::
+::::::::
+:::::::::::
+::::::::::::

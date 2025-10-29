@@ -1,0 +1,94 @@
+---
+title: "About Me"
+---
+
+## Who I Am
+
+I am Mao Yang, a first-year Master of Science (ScM) student in the Department of Biochemistry and Molecular Biology at Johns Hopkins University. Originally from southwestern China, I bring a unique perspective to my research in cancer biology and aging.
+
+## Professional Interests
+
+My research focuses on understanding the molecular mechanisms underlying therapy resistance in cancer cells, with a particular emphasis on how aging processes contribute to this phenomenon. I am passionate about:
+
+-   **Cancer Biology**: Investigating how cancer cells develop resistance to therapeutic interventions
+-   **Aging Research**: Understanding the intersection between aging and cancer progression
+-   **Molecular Mechanisms**: Exploring cellular pathways that contribute to disease progression
+-   **Translational Research**: Bridging the gap between basic science and clinical applications
+
+## Educational Background
+
+### Current Education
+
+**Master of Science in Biochemistry and Molecular Biology**\
+*Johns Hopkins University* (2024 - Present)\
+- Focus: Cancer therapy resistance and aging - Relevant coursework: Advanced Molecular Biology, Cancer Biology, Biochemical Mechanisms
+
+### Previous Education
+
+**Bachelor of Science in \[Your Major\]**\
+*\[Your University\]* (20XX - 20XX)\
+- GPA: X.X/4.0 - Honors: \[List any honors or awards\] - Thesis: \[Your thesis title if applicable\]
+
+## Research Experience
+
+### Graduate Research Assistant
+
+*Johns Hopkins University* (2024 - Present) - Investigating therapy-resistance mechanisms in cancer cells - Studying how aging processes promote cancer progression - Techniques: Cell culture, Western blotting, qPCR, flow cytometry
+
+### Undergraduate Research Assistant
+
+*\[Previous Institution\]* (20XX - 20XX) - \[Describe your previous research experience\] - \[List key achievements or publications\]
+
+## Skills
+
+### Laboratory Skills
+
+-   Cell culture and maintenance
+-   Molecular biology techniques (PCR, cloning, transfection)
+-   Protein analysis (Western blot, immunofluorescence)
+-   Data analysis and statistics (R, Python, GraphPad)
+
+### Technical Skills
+
+-   Programming: R, Python, MATLAB
+-   Data visualization and analysis
+-   Scientific writing and presentation
+-   Project management
+
+## Personal Interests
+
+Beyond the laboratory, I am an avid outdoor enthusiast and creative soul:
+
+-   **Photography**: Capturing the beauty of nature through my lens
+-   **Hiking**: Exploring mountain trails and connecting with nature
+-   **Fencing**: Practicing discipline and strategy through sport
+-   **Cat Parent**: Sharing my life with two wonderful cats, Orangey and Mimi
+
+## Fun Facts About Me
+
+-   My MBTI personality type is INFJ, which makes me intuitive and empathetic
+-   I wear magnifying glasses due to presbyopia - turning a challenge into a unique characteristic
+-   I speak \[list languages you speak\]
+-   I've visited \[number\] countries and love learning about different cultures
+
+## Professional Memberships
+
+-   American Society for Biochemistry and Molecular Biology (ASBMB)
+-   \[Other relevant professional organizations\]
+
+## Contact Information
+
+Feel free to reach out to me for collaborations, research discussions, or just to connect!
+
+-   **Email**: myang112\@jh.edu
+-   **GitHub**: [yangmao180](https://github.com/yangmao180)
+-   **LinkedIn**: \[Your LinkedIn Profile\]
+-   **ORCID**: \[Your ORCID ID\]
+
+## My Philosophy
+
+I believe that scientific research is not just about discovering new knowledge, but about making a meaningful impact on human health and well-being. Through my work in cancer biology, I hope to contribute to the development of more effective therapeutic strategies that can improve patient outcomes.
+
+------------------------------------------------------------------------
+
+*"Science is not only a disciple of reason but, also, one of romance and passion."* - Stephen Hawking
