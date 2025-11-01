@@ -1,6 +1,4 @@
 ---
----
-title: ""
 page-layout: full
 ---
 
@@ -24,7 +22,7 @@ page-layout: full
 
 # Mao Yang {.mt-3}
 
-### (He)
+### (He/Him/His)
 
 #### ScM Student
 
@@ -33,14 +31,14 @@ page-layout: full
 ##### Johns Hopkins University
 
 ::: {.social-links .mt-3}
-[📧Email](myang112@jh.edu)
+[📧 Email](mailto:myang112@jh.edu)
 :::
 ::::
 
 :::::::: {.g-col-12 .g-col-md-8}
 ## 💼 Personal Summary
 
-Hi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on invesigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking photos, fencing and keeping two cats, called Orangey and Mimi.
+Hi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on investigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking photos, fencing and keeping two cats, called Orangey and Mimi.
 
 **Fun facts:**
 
@@ -48,7 +46,7 @@ Hi! My name is Mao Yang and I come from the southwestern part of China. Now, I a
 
 -   My glass is magnifying lens because I have presbyopia
 
-## 🎨 Things I Enjoy
+## 🎨 Things for Fun
 
 ::::: {.row .g-3}
 :::: col-md-6

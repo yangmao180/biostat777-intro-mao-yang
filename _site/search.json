@@ -1,94 +1,31 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mao Yang",
-    "section": "",
-    "text": "title: “” page-layout: full —"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "I am Mao Yang, a first-year Master of Science (ScM) student in the Department of Biochemistry and Molecular Biology at Johns Hopkins University. Originally from southwestern China, I bring a unique perspective to my research in cancer biology and aging."
-  },
-  {
-    "objectID": "index.html#professional-summary",
-    "href": "index.html#professional-summary",
-    "title": "Mao Yang",
-    "section": "",
-    "text": "Hi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on invesigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking pictures, and keeping two cats."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Mao Yang",
-    "section": "",
-    "text": "PhD in Statistics\nUniversity Name\n2018-2022\n\n\nMS in Data Science\nAnother University\n2016-2018\n\n\nBS in Mathematics\nUndergraduate University\n2012-2016"
-  },
-  {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "Your Name",
-    "section": "",
-    "text": "- **Machine Learning**: Deep learning applications in time series forecasting - **Statistical Modeling**: Bayesian methods for complex data structures - **Data Visualization**: Interactive dashboards and storytelling with data - **Reproducible Research**: Developing tools for open science"
-  },
-  {
-    "objectID": "index.html#recent-achievements",
-    "href": "index.html#recent-achievements",
-    "title": "Your Name",
-    "section": "",
-    "text": "Tip2024\n\n\n\n- Best Paper Award at International Data Science Conference - R Package “awesome-viz” reached 1,000 downloads\n\n\n\n\n\n\n\n\nTip2023\n\n\n\n- Published research in Journal of Statistical Software - Invited speaker at RStudio Conference"
-  },
-  {
-    "objectID": "index.html#personal-summary",
-    "href": "index.html#personal-summary",
-    "title": "Mao Yang",
-    "section": "💼 Personal Summary",
-    "text": "💼 Personal Summary\nHi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on invesigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking photos, fencing and keeping two cats, called Orangey and Mimi.\nFun facts:\n\nMy MBTI is INFJ\nMy glass is magnifying lens because I have presbyopia"
-  },
-  {
-    "objectID": "index.html#things-i-enjoy",
-    "href": "index.html#things-i-enjoy",
-    "title": "Mao Yang",
-    "section": "🎨 Things I Enjoy",
-    "text": "🎨 Things I Enjoy\n\n\n\n\n\nFencing\nThe one on the left side is me.\n\n\n\n\n\n\nOrangey and Mimi\nLiving with two adorable cats who bring joy and companionship to my daily life."
-  },
-  {
-    "objectID": "about.html#who-i-am",
-    "href": "about.html#who-i-am",
-    "title": "About Me",
-    "section": "",
-    "text": "I am Mao Yang, a first-year Master of Science (ScM) student in the Department of Biochemistry and Molecular Biology at Johns Hopkins University. Originally from southwestern China, I bring a unique perspective to my research in cancer biology and aging."
+    "text": "My research focuses on understanding the molecular mechanisms underlying therapy resistance in cancer cells, with a particular emphasis on how aging processes contribute to this phenomenon. I am passionate about:\n\nCancer Biology: Investigating how cancer cells develop resistance to therapeutic interventions\nAging Research: Understanding the intersection between aging and cancer progression\nMolecular Mechanisms: Exploring cellular pathways on molecular level\nTranslational Research: Bridging the gap between basic science and clinical applications"
   },
   {
     "objectID": "about.html#professional-interests",
     "href": "about.html#professional-interests",
     "title": "About Me",
-    "section": "Professional Interests",
-    "text": "Professional Interests\nMy research focuses on understanding the molecular mechanisms underlying therapy resistance in cancer cells, with a particular emphasis on how aging processes contribute to this phenomenon. I am passionate about:\n\nCancer Biology: Investigating how cancer cells develop resistance to therapeutic interventions\nAging Research: Understanding the intersection between aging and cancer progression\nMolecular Mechanisms: Exploring cellular pathways that contribute to disease progression\nTranslational Research: Bridging the gap between basic science and clinical applications"
+    "section": "",
+    "text": "My research focuses on understanding the molecular mechanisms underlying therapy resistance in cancer cells, with a particular emphasis on how aging processes contribute to this phenomenon. I am passionate about:\n\nCancer Biology: Investigating how cancer cells develop resistance to therapeutic interventions\nAging Research: Understanding the intersection between aging and cancer progression\nMolecular Mechanisms: Exploring cellular pathways on molecular level\nTranslational Research: Bridging the gap between basic science and clinical applications"
   },
   {
     "objectID": "about.html#educational-background",
     "href": "about.html#educational-background",
     "title": "About Me",
     "section": "Educational Background",
-    "text": "Educational Background\n\nCurrent Education\nMaster of Science in Biochemistry and Molecular Biology\nJohns Hopkins University (2024 - Present)\n- Focus: Cancer therapy resistance and aging - Relevant coursework: Advanced Molecular Biology, Cancer Biology, Biochemical Mechanisms\n\n\nPrevious Education\nBachelor of Science in [Your Major]\n[Your University] (20XX - 20XX)\n- GPA: X.X/4.0 - Honors: [List any honors or awards] - Thesis: [Your thesis title if applicable]"
-  },
-  {
-    "objectID": "about.html#research-experience",
-    "href": "about.html#research-experience",
-    "title": "About Me",
-    "section": "Research Experience",
-    "text": "Research Experience\n\nGraduate Research Assistant\nJohns Hopkins University (2024 - Present) - Investigating therapy-resistance mechanisms in cancer cells - Studying how aging processes promote cancer progression - Techniques: Cell culture, Western blotting, qPCR, flow cytometry\n\n\nUndergraduate Research Assistant\n[Previous Institution] (20XX - 20XX) - [Describe your previous research experience] - [List key achievements or publications]"
+    "text": "Educational Background\n\nMaster of Science in Biochemistry and Molecular Biology\nJohns Hopkins University (2024 - Present)\n- Focus: Cancer therapy resistance and aging - Relevant coursework: Advanced Molecular Biology, Cancer Biology, Biochemical Mechanisms\n\n\nBachelor of Pharmacy\nMacau University of Science and Technology (2020 - 2025)"
   },
   {
     "objectID": "about.html#skills",
     "href": "about.html#skills",
     "title": "About Me",
     "section": "Skills",
-    "text": "Skills\n\nLaboratory Skills\n\nCell culture and maintenance\nMolecular biology techniques (PCR, cloning, transfection)\nProtein analysis (Western blot, immunofluorescence)\nData analysis and statistics (R, Python, GraphPad)\n\n\n\nTechnical Skills\n\nProgramming: R, Python, MATLAB\nData visualization and analysis\nScientific writing and presentation\nProject management"
+    "text": "Skills\n\nLaboratory Skills\n\nCell culture and maintenance\nMolecular biology techniques (PCR, cloning, transfection)\nProtein analysis (Western blot, immunofluorescence)\nData analysis and statistics (R, Python, GraphPad)\n\n\n\nTechnical Skills\n\nProgramming: R, Python\nData visualization and analysis\nScientific writing and presentation"
   },
   {
     "objectID": "about.html#personal-interests",
@@ -98,31 +35,115 @@
     "text": "Personal Interests\nBeyond the laboratory, I am an avid outdoor enthusiast and creative soul:\n\nPhotography: Capturing the beauty of nature through my lens\nHiking: Exploring mountain trails and connecting with nature\nFencing: Practicing discipline and strategy through sport\nCat Parent: Sharing my life with two wonderful cats, Orangey and Mimi"
   },
   {
-    "objectID": "about.html#fun-facts-about-me",
-    "href": "about.html#fun-facts-about-me",
-    "title": "About Me",
-    "section": "Fun Facts About Me",
-    "text": "Fun Facts About Me\n\nMy MBTI personality type is INFJ, which makes me intuitive and empathetic\nI wear magnifying glasses due to presbyopia - turning a challenge into a unique characteristic\nI speak [list languages you speak]\nI’ve visited [number] countries and love learning about different cultures"
-  },
-  {
-    "objectID": "about.html#professional-memberships",
-    "href": "about.html#professional-memberships",
-    "title": "About Me",
-    "section": "Professional Memberships",
-    "text": "Professional Memberships\n\nAmerican Society for Biochemistry and Molecular Biology (ASBMB)\n[Other relevant professional organizations]"
-  },
-  {
     "objectID": "about.html#contact-information",
     "href": "about.html#contact-information",
     "title": "About Me",
     "section": "Contact Information",
-    "text": "Contact Information\nFeel free to reach out to me for collaborations, research discussions, or just to connect!\n\nEmail: myang112@jh.edu\nGitHub: yangmao180\nLinkedIn: [Your LinkedIn Profile]\nORCID: [Your ORCID ID]"
+    "text": "Contact Information\nFeel free to reach out to me for collaborations, research discussions, or just to connect!\n\nEmail: myang112@jh.edu\nGitHub: yangmao180"
   },
   {
-    "objectID": "about.html#my-philosophy",
-    "href": "about.html#my-philosophy",
-    "title": "About Me",
-    "section": "My Philosophy",
-    "text": "My Philosophy\nI believe that scientific research is not just about discovering new knowledge, but about making a meaningful impact on human health and well-being. Through my work in cancer biology, I hope to contribute to the development of more effective therapeutic strategies that can improve patient outcomes.\n\n“Science is not only a disciple of reason but, also, one of romance and passion.” - Stephen Hawking"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mao Yang",
+    "section": "",
+    "text": "📧 Email\n\n\n\n\n\n\n\n\n\nHi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on investigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking photos, fencing and keeping two cats, called Orangey and Mimi.\nFun facts:\n\nMy MBTI is INFJ\nMy glass is magnifying lens because I have presbyopia\n\n\n\n\n\n\n\n\n\n\nThe one on the left side is me.\n\n\n\n\n\n\n\nLiving with two adorable cats who bring joy and companionship to my daily life."
+  },
+  {
+    "objectID": "index.html#personal-summary",
+    "href": "index.html#personal-summary",
+    "title": "Mao Yang",
+    "section": "",
+    "text": "Hi! My name is Mao Yang and I come from the southwestern part of China. Now, I am a first-year ScM student at Biochemmistry and Molecular Biology Department. I am working on investigating therapy-resistance mechanisms of cancer cells and how aging promote this process.Outside of work, I enjoy hiking in the mountains, taking photos, fencing and keeping two cats, called Orangey and Mimi.\nFun facts:\n\nMy MBTI is INFJ\nMy glass is magnifying lens because I have presbyopia"
+  },
+  {
+    "objectID": "index.html#things-for-fun",
+    "href": "index.html#things-for-fun",
+    "title": "Mao Yang",
+    "section": "",
+    "text": "The one on the left side is me.\n\n\n\n\n\n\n\nLiving with two adorable cats who bring joy and companionship to my daily life."
+  },
+  {
+    "objectID": "example-analysis.html",
+    "href": "example-analysis.html",
+    "title": "Example Analysis",
+    "section": "",
+    "text": "```{r setup}\n#| include: false\nknitr::opts_chunk$set(\n  echo = TRUE,\n  eval = TRUE,\n  message = FALSE,\n  fig.width = 10,\n  fig.height = 6,\n  fig.align = 'center',\n  dpi = 300\n)\n```"
+  },
+  {
+    "objectID": "example-analysis.html#research-question",
+    "href": "example-analysis.html#research-question",
+    "title": "Example Analysis",
+    "section": "🎯 Research Question",
+    "text": "🎯 Research Question\n\nHow do album sales patterns and lyrical sentiment differ between Beyoncé and Taylor Swift across different markets, and what can this tell us about their artistic evolution and commercial success?"
+  },
+  {
+    "objectID": "example-analysis.html#intended-audience",
+    "href": "example-analysis.html#intended-audience",
+    "title": "Example Analysis",
+    "section": "👥 Intended Audience",
+    "text": "👥 Intended Audience\n\nIndustry ProfessionalsData ScientistsMusic Fans\n\n\n\nMusic executives tracking market trends\nA&R representatives analyzing artist performance\nMarketing teams planning international campaigns\n\n\n\n\nProfessionals studying text analytics\nResearchers in sentiment analysis\nStudents learning data visualization\n\n\n\n\nFans curious about artist statistics\nMusic bloggers and journalists\nPop culture enthusiasts"
+  },
+  {
+    "objectID": "example-analysis.html#data-overview",
+    "href": "example-analysis.html#data-overview",
+    "title": "Example Analysis",
+    "section": "📊 Data Overview",
+    "text": "📊 Data Overview\n\nData Sources\nWe’re analyzing three comprehensive datasets from TidyTuesday:\n\n💿 Sales Data: Album sales by country, release dates, chart performance\n🎵 Beyoncé Lyrics: Complete song lyrics, album information, song metadata\n🎵 Taylor Swift Lyrics: Complete song lyrics, album information, song metadata\n\n\n\nData Dictionary\n\n\n\n\n\n\nTip📖 Click to view detailed data dictionary\n\n\n\n\n\nSales Dataset Variables: - artist: Artist name (Beyoncé or Taylor Swift) - title: Album title - country: Country of sales (US, UK, World, etc.) - sales: Total sales figures - released: Album release date\nLyrics Dataset Variables: - song_name: Song title - artist: Artist name - album: Album name - line: Individual lyric line - song_id: Unique song identifier\nFull documentation available here"
+  },
+  {
+    "objectID": "example-analysis.html#data-preparation",
+    "href": "example-analysis.html#data-preparation",
+    "title": "Example Analysis",
+    "section": "🔧 Data Preparation",
+    "text": "🔧 Data Preparation\n\nLoading Required Libraries\n\n# Core tidyverse packages\nlibrary(tidyverse)    # For data manipulation\nlibrary(lubridate)    # For date handling\nlibrary(forcats)      # For factor manipulation\n\n# Text analysis\nlibrary(tidytext)     # For text mining\nlibrary(wordcloud)    # For word clouds\n\n# Additional utilities\nlibrary(here)         # For file paths\nlibrary(knitr)        # For tables\nlibrary(scales)       # For formatting\n\n\n\nData Import and Initial Processing\n\n\nLoad and cache data\n# Check if data exists locally\nrds_files &lt;- c(\"b_lyrics.RDS\", \"ts_lyrics.RDS\", \"sales.RDS\")\n\nif (any(!file.exists(here(\"data\", rds_files)))) {\n    # Download data if not cached\n    b_lyrics &lt;- readr::read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/beyonce_lyrics.csv\")\n    ts_lyrics &lt;- readr::read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/taylor_swift_lyrics.csv\")\n    sales &lt;- readr::read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/sales.csv\")\n    \n    # Create data directory and save\n    dir.create(here(\"data\"), showWarnings = FALSE)\n    saveRDS(b_lyrics, file = here(\"data\", \"b_lyrics.RDS\"))\n    saveRDS(ts_lyrics, file = here(\"data\", \"ts_lyrics.RDS\"))\n    saveRDS(sales, file = here(\"data\", \"sales.RDS\"))\n}\n\n# Load cached data\nb_lyrics &lt;- readRDS(here(\"data\", \"b_lyrics.RDS\"))\nts_lyrics &lt;- readRDS(here(\"data\", \"ts_lyrics.RDS\"))\nsales &lt;- readRDS(here(\"data\", \"sales.RDS\"))\n\n\n\n\nData Wrangling with dplyr and tidyr\n\n\n\n\n\n\nNote🔍 Required Functions\n\n\n\nThis section demonstrates the use of 7 different dplyr functions and 3 different tidyr functions as required.\n\n\n\n\nTransform sales data\n# Clean and transform sales data using multiple dplyr functions\nsales_clean &lt;- sales %&gt;%\n  # 1. mutate() - Clean release dates and convert sales to millions\n  mutate(\n    released_clean = str_remove_all(released, \"\\\\s*\\\\([A-Z]+\\\\)\\\\[[0-9]+\\\\]\"),\n    released = mdy(released_clean),\n    sales_millions = sales / 1000000,\n    years_since_release = year(Sys.Date()) - year(released)\n  ) %&gt;%\n  # 2. select() - Keep only needed columns\n  select(-released_clean, -sales) %&gt;%\n  # 3. rename() - Rename for clarity\n  rename(sales = sales_millions) %&gt;%\n  # 4. filter() - Keep only major markets\n  filter(country %in% c(\"UK\", \"US\", \"World\", \"WW\")) %&gt;%\n  # 5. mutate() with case_when() - Standardize country names\n  mutate(\n    country = case_when(\n      country == \"WW\" ~ \"World\",\n      TRUE ~ country\n    ),\n    country = factor(country, levels = c(\"US\", \"UK\", \"World\"))\n  ) %&gt;%\n  # 6. arrange() - Sort by artist and release date\n  arrange(artist, released)\n\n# 7. group_by() and summarise() - Create summary statistics\nsales_summary &lt;- sales_clean %&gt;%\n  group_by(artist, country) %&gt;%\n  summarise(\n    total_sales = sum(sales, na.rm = TRUE),\n    avg_sales = mean(sales, na.rm = TRUE),\n    n_albums = n_distinct(title),\n    latest_release = max(released, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\n\n\n\nTransform lyrics data\n# Process Taylor Swift lyrics using tidyr functions\nts_lyrics_processed &lt;- ts_lyrics %&gt;%\n  # Add unique identifiers\n  mutate(song_id = row_number()) %&gt;%\n  # 1. separate_rows() - Split lyrics into individual lines\n  separate_rows(Lyrics, sep = \"\\n\") %&gt;%\n  # Clean and filter\n  mutate(line = str_trim(Lyrics)) %&gt;%\n  filter(line != \"\" & !is.na(line)) %&gt;%\n  # Add line numbers\n  group_by(song_id, Artist, Album, Title) %&gt;%\n  mutate(line_number = row_number()) %&gt;%\n  ungroup() %&gt;%\n  # 2. unite() - Create song identifier\n  unite(\"song_album\", Title, Album, sep = \" - \", remove = FALSE)\n\n# 3. pivot_wider() - Create comparison table\nartist_comparison &lt;- sales_summary %&gt;%\n  select(artist, country, total_sales) %&gt;%\n  pivot_wider(\n    names_from = country, \n    values_from = total_sales,\n    names_prefix = \"sales_\"\n  )\n\n\n\n\nSummary Table\n\n\nShow code\n# Create formatted table\nartist_comparison %&gt;%\n  mutate(\n    Total = sales_US + sales_UK + sales_World,\n    across(starts_with(\"sales_\"), ~round(., 2))\n  ) %&gt;%\n  arrange(desc(Total)) %&gt;%\n  kable(\n    col.names = c(\"Artist\", \"US\", \"UK\", \"World\", \"Total\"),\n    align = c(\"l\", rep(\"r\", 4)),\n    format.args = list(big.mark = \",\")\n  )\n\n\n\nTotal Album Sales by Artist and Market (in millions)\n\n\nArtist\nUS\nUK\nWorld\nTotal\n\n\n\n\nTaylor Swift\n31.66\n3.32\n40.8\n75.77993\n\n\nBeyoncé\n17.66\n5.24\n34.5\n57.39300"
+  },
+  {
+    "objectID": "example-analysis.html#data-visualization",
+    "href": "example-analysis.html#data-visualization",
+    "title": "Example Analysis",
+    "section": "📈 Data Visualization",
+    "text": "📈 Data Visualization\n\nPlot 1: Market Distribution Analysis\n\n\nShow code\n# Create stacked percentage bar chart\np1 &lt;- ggplot(sales_summary, aes(x = artist, y = total_sales, fill = country)) +\n  # Main geometry\n  geom_bar(stat = \"identity\", position = \"fill\", width = 0.7) +\n  # Scales\n  scale_y_continuous(\n    labels = scales::percent_format(),\n    expand = expansion(mult = c(0, 0.05))\n  ) +\n  scale_fill_manual(\n    values = c(\"US\" = \"#FF6B6B\", \"UK\" = \"#4ECDC4\", \"World\" = \"#45B7D1\"),\n    guide = guide_legend(title.position = \"top\")\n  ) +\n  # Labels\n  labs(\n    title = \"Market Composition: Where Do Album Sales Come From?\",\n    subtitle = \"Beyoncé shows more balanced global distribution compared to Taylor Swift's US dominance\",\n    x = NULL,\n    y = \"Percentage of Total Sales\",\n    fill = \"Market\",\n    caption = \"Data: TidyTuesday | Visualization: Mao Yang\"\n  ) +\n  # Theme\n  theme_minimal(base_size = 14) +\n  theme(\n    plot.title = element_text(size = 18, face = \"bold\", margin = margin(b = 5)),\n    plot.subtitle = element_text(size = 12, color = \"gray40\", margin = margin(b = 20)),\n    legend.position = \"top\",\n    legend.title = element_text(face = \"bold\"),\n    panel.grid.major.x = element_blank(),\n    panel.grid.minor = element_blank(),\n    axis.text = element_text(size = 12),\n    plot.margin = margin(20, 20, 20, 20)\n  )\n\nprint(p1)\n\n\n\n\n\nGeographic distribution of album sales reveals different market strategies\n\n\n\n\n\n\nPlot 2: Temporal Sales Trends with Faceting\n\n\nShow code\n# Create faceted time series plot\np2 &lt;- sales_clean %&gt;%\n  ggplot(aes(x = released, y = sales, color = artist)) +\n  # Points and smooth lines\n  geom_point(size = 3, alpha = 0.7) +\n  geom_smooth(\n    method = \"loess\", \n    se = TRUE, \n    alpha = 0.2,\n    span = 0.75\n  ) +\n  # Faceting with facet_wrap\n  facet_wrap(\n    ~ country, \n    nrow = 3, \n    scales = \"free_y\"\n  ) +\n  # Scales\n  scale_color_manual(\n    values = c(\"Beyoncé\" = \"#FF1493\", \"Taylor Swift\" = \"#1E90FF\"),\n    guide = guide_legend(title = NULL)\n  ) +\n  scale_x_date(\n    date_breaks = \"2 years\", \n    date_labels = \"%Y\"\n  ) +\n  scale_y_continuous(\n    labels = scales::comma_format(suffix = \"M\")\n  ) +\n  # Labels\n  labs(\n    title = \"Evolution of Album Sales Across Markets (2003-2019)\",\n    subtitle = \"Taylor Swift maintains stronger US presence while Beyoncé shows consistent global appeal\",\n    x = \"Release Year\",\n    y = \"Album Sales\",\n    caption = \"Shaded areas represent 95% confidence intervals\"\n  ) +\n  # Theme\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\"),\n    plot.subtitle = element_text(size = 12, color = \"gray40\"),\n    strip.text = element_text(size = 14, face = \"bold\"),\n    strip.background = element_rect(fill = \"gray95\", color = NA),\n    legend.position = \"top\",\n    panel.spacing = unit(1.5, \"lines\"),\n    axis.text.x = element_text(angle = 45, hjust = 1)\n  )\n\nprint(p2)\n\n\n\n\n\nAlbum sales trends reveal different trajectories across markets\n\n\n\n\n\n\nPlot 3: Sentiment Analysis with Facet Grid\n\n\nShow code\n# Prepare sentiment data for both artists\nsentiment_analysis &lt;- bind_rows(\n  # Beyoncé lyrics\n  b_lyrics %&gt;% \n    mutate(artist = \"Beyoncé\") %&gt;%\n    select(artist, song_name, line),\n  # Taylor Swift lyrics  \n  ts_lyrics_processed %&gt;% \n    mutate(artist = \"Taylor Swift\") %&gt;%\n    select(artist, song_name = Title, line)\n) %&gt;%\n  # Tokenize and join with sentiment lexicon\n  unnest_tokens(word, line) %&gt;%\n  inner_join(get_sentiments(\"bing\"), by = \"word\") %&gt;%\n  # Calculate sentiment scores by song\n  count(artist, song_name, sentiment) %&gt;%\n  pivot_wider(names_from = sentiment, values_from = n, values_fill = 0) %&gt;%\n  mutate(\n    sentiment_score = (positive - negative) / (positive + negative),\n    total_words = positive + negative,\n    sentiment_category = case_when(\n      sentiment_score &lt; -0.2 ~ \"Negative\",\n      sentiment_score &gt; 0.2 ~ \"Positive\", \n      TRUE ~ \"Neutral\"\n    ),\n    word_count_cat = case_when(\n      total_words &lt; 30 ~ \"Short Songs\",\n      total_words &lt; 60 ~ \"Medium Songs\",\n      TRUE ~ \"Long Songs\"\n    )\n  ) %&gt;%\n  filter(total_words &gt;= 10)\n\n# Create facet grid plot\np3 &lt;- sentiment_analysis %&gt;%\n  ggplot(aes(x = sentiment_score, fill = sentiment_category)) +\n  # Density plot\n  geom_density(alpha = 0.7, color = NA) +\n  # Use facet_grid for two-dimensional faceting\n  facet_grid(word_count_cat ~ artist, scales = \"free_y\") +\n  # Scales\n  scale_fill_manual(\n    values = c(\"Negative\" = \"#E74C3C\", \"Neutral\" = \"#95A5A6\", \"Positive\" = \"#2ECC71\"),\n    guide = \"none\"\n  ) +\n  scale_x_continuous(\n    limits = c(-1, 1),\n    breaks = seq(-1, 1, 0.5)\n  ) +\n  # Labels\n  labs(\n    title = \"Distribution of Song Sentiment by Artist and Song Length\",\n    subtitle = \"Analyzing emotional content across different song categories\",\n    x = \"Sentiment Score\",\n    y = \"Density\",\n    caption = \"Based on Bing sentiment lexicon\"\n  ) +\n  # Theme\n  theme_minimal(base_size = 12) +\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\"),\n    plot.subtitle = element_text(size = 12, color = \"gray40\"),\n    strip.text = element_text(face = \"bold\", size = 11),\n    strip.background = element_rect(fill = \"gray95\", color = NA),\n    panel.spacing = unit(1, \"lines\")\n  )\n\nprint(p3)\n\n\n\n\n\nLyrical sentiment patterns reveal artistic differences"
+  },
+  {
+    "objectID": "example-analysis.html#external-resources",
+    "href": "example-analysis.html#external-resources",
+    "title": "Example Analysis",
+    "section": "🌐 External Resources",
+    "text": "🌐 External Resources\n\n\n\n\n\n\nTipIndustry Insight\n\n\n\nFor more on music industry analytics, check out the IFPI Global Music Report.\n\n\n\nMusic Industry Visualization\n\n\n\nGlobal Music Industry Revenue Trends"
+  },
+  {
+    "objectID": "example-analysis.html#key-findings",
+    "href": "example-analysis.html#key-findings",
+    "title": "Example Analysis",
+    "section": "🔍 Key Findings",
+    "text": "🔍 Key Findings\n\n\n\n\n\n\nImportantMain Discovery\n\n\n\nTaylor Swift shows stronger domestic (US) market performance while Beyoncé demonstrates more balanced global appeal, with both artists showing declining sales trends over time.\n\n\n\n\n\n\n\n\nNoteSentiment Analysis\n\n\n\nBoth artists use predominantly positive language in their lyrics, but Taylor Swift shows more variation in emotional content across albums."
+  },
+  {
+    "objectID": "example-analysis.html#additional-statistics",
+    "href": "example-analysis.html#additional-statistics",
+    "title": "Example Analysis",
+    "section": "Additional Statistics",
+    "text": "Additional Statistics\n\nQuick Facts:\n📊 Total albums: 14\n📅 Date range: 2003 - 2019\n💿 Avg sales: 3.7M\n🎵 Songs analyzed: 522"
+  },
+  {
+    "objectID": "example-analysis.html#summary",
+    "href": "example-analysis.html#summary",
+    "title": "Example Analysis",
+    "section": "📝 Summary",
+    "text": "📝 Summary\nThis comprehensive analysis of Beyoncé and Taylor Swift’s careers reveals distinct patterns in both commercial success and artistic expression. Taylor Swift demonstrates exceptional strength in the US market, maintaining consistent high sales volumes domestically, while Beyoncé shows a more globally distributed fanbase. Both artists experienced peak sales in their early careers, with a general declining trend that reflects broader industry changes due to streaming. The sentiment analysis reveals that both artists predominantly use positive language, though Taylor Swift’s lyrics show greater emotional range across albums. The faceted visualizations effectively illustrated how market dynamics vary by geography and how sentiment patterns differ by song length, providing valuable insights for music industry professionals and data scientists alike."
+  },
+  {
+    "objectID": "example-analysis.html#functions-used-from-required-packages",
+    "href": "example-analysis.html#functions-used-from-required-packages",
+    "title": "Example Analysis",
+    "section": "📊 Functions Used from Required Packages",
+    "text": "📊 Functions Used from Required Packages\n\ndplyr functions used (7+):\n\nmutate(): Created new variables and transformed data\nselect(): Selected specific columns\nfilter(): Filtered rows based on conditions\ngroup_by(): Grouped data for analysis\nsummarise(): Created summary statistics\narrange(): Sorted data\ncase_when(): Created conditional logic\nrename(): Renamed columns for clarity\n\n\n\ntidyr functions used (3):\n\nseparate_rows(): Split lyrics into individual lines\npivot_wider(): Reshaped data from long to wide\nunite(): Combined columns into single identifier\n\n\n\nggplot2 functions used (8+):\n\nggplot(): Initialized plots\ngeom_bar(): Created bar charts\ngeom_point(): Added scatter points\ngeom_smooth(): Added trend lines\ngeom_density(): Created density plots\nfacet_wrap(): Created wrapped facets\nfacet_grid(): Created grid facets\nscale_*(): Various scale functions for customization\ntheme_*(): Customized plot appearance"
+  },
+  {
+    "objectID": "example-analysis.html#references",
+    "href": "example-analysis.html#references",
+    "title": "Example Analysis",
+    "section": "📚 References",
+    "text": "📚 References\n\nTidyTuesday. (2020). “Beyoncé and Taylor Swift Lyrics.” GitHub Repository\nSilge, J., & Robinson, D. (2017). “Text Mining with R: A Tidy Approach.” Online Book\nWickham, H. (2016). “ggplot2: Elegant Graphics for Data Analysis.” Springer-Verlag New York. Online Documentation\nIFPI. (2021). “Global Music Report 2021.” International Federation of the Phonographic Industry. Report Link"
   }
 ]

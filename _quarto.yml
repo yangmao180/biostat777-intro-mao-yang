@@ -2,20 +2,20 @@ project:
   type: website
 
 website:
-  title: "Project_01_Statistical Programming"
+  title: "Mao Yang"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Example Analysis"
+        href: example-analysis.qmd
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
-    toc: true
-
-editor: visual
-
+    toc: true 
