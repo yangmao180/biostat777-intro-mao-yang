@@ -18,7 +18,7 @@ page-layout: full
 :::::::::::: column-page
 ::::::::::: grid
 :::: {.g-col-12 .g-col-md-4 .text-center}
-![](images/mao-01.jpg){.rounded-circle}
+![](images/mao.jpg){.rounded-circle}
 
 # Mao Yang {.mt-3}
 
