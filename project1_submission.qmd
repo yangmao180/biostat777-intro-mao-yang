@@ -10,10 +10,10 @@ format:
 ## Part 1: Quarto Website
 
 ### GitHub Repository
-**URL**: https://github.com/jhu-statprogramming-fall-2025/biostat777-intro-mao-yang
+**URL**: https://github.com/yangmao180/biostat777-intro-mao-yang
 
 ### Deployed Website
-**URL**: https://jhu-statprogramming-fall-2025.github.io/biostat777-intro-mao-yang/
+**URL**: https://yangmao180.github.io/biostat777-intro-mao-yang/
 
 ### Website Components Checklist
 - ✅ At least 3 pages (Home, About, Example Analysis)
