@@ -9,7 +9,7 @@ website:
         href: index.qmd
       - text: "About"
         href: about.qmd
-      - text: "Example Analysis - Taylor vs Beyoncé"
+      - text: "Example Analysis"
         href: example-analysis.qmd
 
 format:
