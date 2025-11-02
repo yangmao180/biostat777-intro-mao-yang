@@ -1,0 +1,89 @@
+---
+title: "Project 1 Submission"
+author: "Mao Yang"
+date: today
+format: 
+  html:
+    embed-resources: true
+---
+
+## Part 1: Quarto Website
+
+### GitHub Repository
+**URL**: https://github.com/jhu-statprogramming-fall-2025/biostat777-intro-mao-yang
+
+### Deployed Website
+**URL**: https://jhu-statprogramming-fall-2025.github.io/biostat777-intro-mao-yang/
+
+### Website Components Checklist
+- ✅ At least 3 pages (Home, About, Example Analysis)
+- ✅ Navigation bar/menu
+- ✅ Embedded Quarto features:
+  - Callout blocks
+  - Tabsets
+  - Code folding
+  - Figure captions
+  - Margin content
+- ✅ Example data analysis with:
+  - 5+ different `dplyr` verbs
+  - 3+ different `tidyr` functions
+  - 3 different types of `ggplot2` plots
+  - Both `facet_wrap()` and `facet_grid()`
+- ✅ External image
+- ✅ Summary paragraph (4-6 sentences)
+- ✅ All functions listed and explained
+
+## Part 2: Command Line Exercise
+
+### Shell Script Location
+The shell script `student_analysis.sh` is located in the root directory of my repository.
+
+### Commands Used
+1. **Download file**: `curl -O [URL]`
+2. **Display contents**: `cat students.csv`
+3. **First 5 lines**: `head -5 students.csv`
+4. **Last 3 lines**: `tail -3 students.csv`
+5. **Count lines**: `wc -l students.csv`
+6. **Find Math students**: `grep "Math" students.csv`
+7. **Find female students**: `grep ",F," students.csv`
+8. **Sort by age**: `sort -t',' -k3 -n`
+9. **Unique subjects**: `cut -d',' -f6 | sort | uniq`
+10. **Average grade**: `awk` calculation
+11. **Replace text**: `sed 's/Math/Mathematics/g'`
+
+### Shell Script Output
+
+```{bash}
+#| echo: false
+#| eval: true
+# Run the shell script if it exists
+if [ -f "./student_analysis.sh" ]; then
+    ./student_analysis.sh
+else
+    echo "Shell script not found in current directory"
+fi
+```
+
+## Additional Information
+
+### Technical Details
+- **Quarto version**: `r quarto::quarto_version()`
+- **R version**: `r R.version.string`
+- **Platform**: `r R.version$platform`
+
+### Project Structure
+```
+biostat777-intro-mao-yang/
+├── _quarto.yml
+├── index.qmd
+├── about.qmd
+├── example-analysis.qmd
+├── README.md
+├── student_analysis.sh
+├── data/
+│   ├── b_lyrics.RDS
+│   ├── ts_lyrics.RDS
+│   └── sales.RDS
+└── _site/
+```
+
