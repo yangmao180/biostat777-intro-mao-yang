@@ -9,11 +9,11 @@
 
 ## Website
 
-🌐 **Live Website**: https://jhu-statprogramming-fall-2025.github.io/biostat777-intro-mao-yang/
+🌐 **Live Website**: https://yangmao180.github.io/biostat777-intro-mao-yang/
 
 ## Description
 
-This is my personal website created for BIOSTAT 777 (Statistical Programming Paradigms and Workflows) Project 1. The website showcases my background, interests, and includes a comprehensive data analysis example comparing Beyoncé and Taylor Swift's music careers.
+This is my personal website created for BIOSTAT 777 (Statistical Programming Paradigms and Workflows) Project 1. The website showcases my background, interests, and includes a data analysis example comparing Beyoncé and Taylor Swift's music careers.
 
 ## Website Structure
 
@@ -46,7 +46,7 @@ This is my personal website created for BIOSTAT 777 (Statistical Programming Par
 1.  Clone this repository:
 
     ``` bash
-    git clone https://github.com/jhu-statprogramming-fall-2025/biostat777-intro-mao-yang.git
+    git clone https://github.com/yangmao180/biostat777-intro-mao-yang
     ```
 
 2.  Open the project in RStudio
