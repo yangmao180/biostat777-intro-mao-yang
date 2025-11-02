@@ -46,13 +46,13 @@ This is my personal website created for BIOSTAT 777 (Statistical Programming Par
    install.packages(c("quarto", "tidyverse", "tidytext", "lubridate", "wordcloud", "here"))
    ```
 4. Render the website:
-  ```{r}
-  quarto::quarto_render()
-  ```
+   ```{r}
+   quarto::quarto_render()
+   ```
 5. Deployment:
-  ```bash
-  quarto publish gh-pages
-  ```
+   ```bash
+   quarto publish gh-pages
+   ```
 ## Course Information
 
 Course: BIOSTAT 777 - Statistical Programming Paradigms and Workflows
