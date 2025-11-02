@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Example Analysis – Mao Yang</title>
+<title>Example Analysis - Taylor vs Beyoncé – Mao Yang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -303,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./example-analysis.html" aria-current="page"> 
-<span class="menu-text">Example Analysis</span></a>
+<span class="menu-text">Example Analysis - Taylor vs Beyoncé</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -368,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Example Analysis</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Example Analysis - Taylor vs Beyoncé</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -483,7 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional utilities</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)         <span class="co"># For file paths</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)        <span class="co"># For tables</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)       <span class="co"># For formatting</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)       <span class="co"># For formatting</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-import-and-initial-processing" class="level3">
@@ -802,9 +803,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Neutral"</span></span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">word_count_cat =</span> <span class="fu">case_when</span>(</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"Short Songs"</span>,</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Medium Songs"</span>,</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Long Songs"</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"Short Songs (Words &lt;30)"</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Medium Songs (30 &lt; Words &lt; 60)"</span>,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Long Songs (Wrods &gt; 60)"</span></span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_words <span class="sc">&gt;=</span> <span class="dv">10</span>)</span>
@@ -831,7 +832,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Analyzing emotional content across different song categories"</span>,</span>
 <span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sentiment Score"</span>,</span>
 <span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Based on Bing sentiment lexicon"</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Based on Bing sentiment lexicon | Sentiment Score = (Positive - Negative) / (Positive + Negative)"</span></span>
 <span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
 <span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
@@ -1442,506 +1443,508 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Example Analysis"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">eval =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">10</span>,</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">6</span>,</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">'center'</span>,</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">10</span>,</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">6</span>,</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">'center'</span>,</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🎯 Research Question</span></span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>::: callout-question</span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>**How do album sales patterns and lyrical sentiment differ between Beyoncé and Taylor Swift across different markets, and what can this tell us about their artistic evolution and commercial success?**</span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## 👥 Intended Audience</span></span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### Industry Professionals</span></span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Music executives tracking market trends</span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A&amp;R representatives analyzing artist performance</span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Marketing teams planning international campaigns</span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Scientists</span></span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Professionals studying text analytics</span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Researchers in sentiment analysis</span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Students learning data visualization</span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Music Fans</span></span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fans curious about artist statistics</span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Music bloggers and journalists</span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pop culture enthusiasts</span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📊 Data Overview</span></span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Sources</span></span>
-<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>We're analyzing three comprehensive datasets from <span class="co">[</span><span class="ot">TidyTuesday</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29)</span>:</span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**💿 Sales Data**: Album sales by country, release dates, chart performance</span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**🎵 Beyoncé Lyrics**: Complete song lyrics, album information, song metadata</span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**🎵 Taylor Swift Lyrics**: Complete song lyrics, album information, song metadata</span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Dictionary</span></span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📖 Click to view detailed data dictionary</span></span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>**Sales Dataset Variables:** - <span class="in">`artist`</span>: Artist name (Beyoncé or Taylor Swift) - <span class="in">`title`</span>: Album title - <span class="in">`country`</span>: Country of sales (US, UK, World, etc.) - <span class="in">`sales`</span>: Total sales figures - <span class="in">`released`</span>: Album release date</span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>**Lyrics Dataset Variables:** - <span class="in">`song_name`</span>: Song title - <span class="in">`artist`</span>: Artist name - <span class="in">`album`</span>: Album name - <span class="in">`line`</span>: Individual lyric line - <span class="in">`song_id`</span>: Unique song identifier</span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Full documentation available here</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29#readme)</span></span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔧 Data Preparation</span></span>
-<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading Required Libraries</span></span>
-<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r libraries}</span></span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Core tidyverse packages</span></span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># For data manipulation</span></span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)    <span class="co"># For date handling</span></span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)      <span class="co"># For factor manipulation</span></span>
-<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Text analysis</span></span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)     <span class="co"># For text mining</span></span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud)    <span class="co"># For word clouds</span></span>
-<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional utilities</span></span>
-<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)         <span class="co"># For file paths</span></span>
-<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)        <span class="co"># For tables</span></span>
-<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)       <span class="co"># For formatting</span></span>
-<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Import and Initial Processing</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Example Analysis - </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">Taylor vs Beyoncé"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show code"</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">eval =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">10</span>,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">6</span>,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">'center'</span>,</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">10</span>,</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">6</span>,</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">'center'</span>,</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🎯 Research Question</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>::: callout-question</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>**How do album sales patterns and lyrical sentiment differ between Beyoncé and Taylor Swift across different markets, and what can this tell us about their artistic evolution and commercial success?**</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## 👥 Intended Audience</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Industry Professionals</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Music executives tracking market trends</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A&amp;R representatives analyzing artist performance</span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Marketing teams planning international campaigns</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Scientists</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Professionals studying text analytics</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Researchers in sentiment analysis</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Students learning data visualization</span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="fu">### Music Fans</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fans curious about artist statistics</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Music bloggers and journalists</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pop culture enthusiasts</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📊 Data Overview</span></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Sources</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>We're analyzing three comprehensive datasets from <span class="co">[</span><span class="ot">TidyTuesday</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29)</span>:</span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**💿 Sales Data**: Album sales by country, release dates, chart performance</span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**🎵 Beyoncé Lyrics**: Complete song lyrics, album information, song metadata</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**🎵 Taylor Swift Lyrics**: Complete song lyrics, album information, song metadata</span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Dictionary</span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📖 Click to view detailed data dictionary</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>**Sales Dataset Variables:** - <span class="in">`artist`</span>: Artist name (Beyoncé or Taylor Swift) - <span class="in">`title`</span>: Album title - <span class="in">`country`</span>: Country of sales (US, UK, World, etc.) - <span class="in">`sales`</span>: Total sales figures - <span class="in">`released`</span>: Album release date</span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>**Lyrics Dataset Variables:** - <span class="in">`song_name`</span>: Song title - <span class="in">`artist`</span>: Artist name - <span class="in">`album`</span>: Album name - <span class="in">`line`</span>: Individual lyric line - <span class="in">`song_id`</span>: Unique song identifier</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Full documentation available here</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29#readme)</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔧 Data Preparation</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### Loading Required Libraries</span></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r libraries}</span></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Core tidyverse packages</span></span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># For data manipulation</span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)    <span class="co"># For date handling</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)      <span class="co"># For factor manipulation</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Text analysis</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)     <span class="co"># For text mining</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud)    <span class="co"># For word clouds</span></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional utilities</span></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)         <span class="co"># For file paths</span></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)        <span class="co"># For tables</span></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)       <span class="co"># For formatting</span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r load-data}</span></span>
-<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Load and cache data"</span></span>
-<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if data exists locally</span></span>
-<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>rds_files <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"b_lyrics.RDS"</span>, <span class="st">"ts_lyrics.RDS"</span>, <span class="st">"sales.RDS"</span>)</span>
-<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(<span class="sc">!</span><span class="fu">file.exists</span>(<span class="fu">here</span>(<span class="st">"data"</span>, rds_files)))) {</span>
-<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Download data if not cached</span></span>
-<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>    b_lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/beyonce_lyrics.csv"</span>)</span>
-<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a>    ts_lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/taylor_swift_lyrics.csv"</span>)</span>
-<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>    sales <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/sales.csv"</span>)</span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create data directory and save</span></span>
-<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="fu">here</span>(<span class="st">"data"</span>), <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(b_lyrics, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"b_lyrics.RDS"</span>))</span>
-<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(ts_lyrics, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"ts_lyrics.RDS"</span>))</span>
-<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(sales, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"sales.RDS"</span>))</span>
-<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cached data</span></span>
-<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>b_lyrics <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"b_lyrics.RDS"</span>))</span>
-<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>ts_lyrics <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"ts_lyrics.RDS"</span>))</span>
-<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"sales.RDS"</span>))</span>
-<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Wrangling with `dplyr` and `tidyr`</span></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Import and Initial Processing</span></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r load-data}</span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Load and cache data"</span></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if data exists locally</span></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a>rds_files <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"b_lyrics.RDS"</span>, <span class="st">"ts_lyrics.RDS"</span>, <span class="st">"sales.RDS"</span>)</span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(<span class="sc">!</span><span class="fu">file.exists</span>(<span class="fu">here</span>(<span class="st">"data"</span>, rds_files)))) {</span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Download data if not cached</span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>    b_lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/beyonce_lyrics.csv"</span>)</span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>    ts_lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/taylor_swift_lyrics.csv"</span>)</span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>    sales <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-29/sales.csv"</span>)</span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create data directory and save</span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="fu">here</span>(<span class="st">"data"</span>), <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(b_lyrics, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"b_lyrics.RDS"</span>))</span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(ts_lyrics, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"ts_lyrics.RDS"</span>))</span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>    <span class="fu">saveRDS</span>(sales, <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"sales.RDS"</span>))</span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cached data</span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>b_lyrics <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"b_lyrics.RDS"</span>))</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>ts_lyrics <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"ts_lyrics.RDS"</span>))</span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"sales.RDS"</span>))</span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Required Functions</span></span>
-<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a>This section demonstrates the use of **7 different `dplyr` functions** and **3 different `tidyr` functions** as required.</span>
-<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r wrangle-sales}</span></span>
-<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Transform sales data"</span></span>
-<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean and transform sales data using multiple dplyr functions</span></span>
-<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a>sales_clean <span class="ot">&lt;-</span> sales <span class="sc">%&gt;%</span></span>
-<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. mutate() - Clean release dates and convert sales to millions</span></span>
-<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">released_clean =</span> <span class="fu">str_remove_all</span>(released, <span class="st">"</span><span class="sc">\\</span><span class="st">s*</span><span class="sc">\\</span><span class="st">([A-Z]+</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">[[0-9]+</span><span class="sc">\\</span><span class="st">]"</span>),</span>
-<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>    <span class="at">released =</span> <span class="fu">mdy</span>(released_clean),</span>
-<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">sales_millions =</span> sales <span class="sc">/</span> <span class="dv">1000000</span>,</span>
-<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">years_since_release =</span> <span class="fu">year</span>(<span class="fu">Sys.Date</span>()) <span class="sc">-</span> <span class="fu">year</span>(released)</span>
-<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. select() - Keep only needed columns</span></span>
-<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>released_clean, <span class="sc">-</span>sales) <span class="sc">%&gt;%</span></span>
-<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 3. rename() - Rename for clarity</span></span>
-<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sales =</span> sales_millions) <span class="sc">%&gt;%</span></span>
-<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 4. filter() - Keep only major markets</span></span>
-<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"UK"</span>, <span class="st">"US"</span>, <span class="st">"World"</span>, <span class="st">"WW"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 5. mutate() with case_when() - Standardize country names</span></span>
-<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">case_when</span>(</span>
-<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a>      country <span class="sc">==</span> <span class="st">"WW"</span> <span class="sc">~</span> <span class="st">"World"</span>,</span>
-<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> country</span>
-<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">factor</span>(country, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"US"</span>, <span class="st">"UK"</span>, <span class="st">"World"</span>))</span>
-<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 6. arrange() - Sort by artist and release date</span></span>
-<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(artist, released)</span>
-<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. group_by() and summarise() - Create summary statistics</span></span>
-<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a>sales_summary <span class="ot">&lt;-</span> sales_clean <span class="sc">%&gt;%</span></span>
-<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(artist, country) <span class="sc">%&gt;%</span></span>
-<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_sales =</span> <span class="fu">sum</span>(sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_sales =</span> <span class="fu">mean</span>(sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_albums =</span> <span class="fu">n_distinct</span>(title),</span>
-<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">latest_release =</span> <span class="fu">max</span>(released, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r wrangle-lyrics}</span></span>
-<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Transform lyrics data"</span></span>
-<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a><span class="co"># Process Taylor Swift lyrics using tidyr functions</span></span>
-<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a>ts_lyrics_processed <span class="ot">&lt;-</span> ts_lyrics <span class="sc">%&gt;%</span></span>
-<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add unique identifiers</span></span>
-<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">song_id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. separate_rows() - Split lyrics into individual lines</span></span>
-<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_rows</span>(Lyrics, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Clean and filter</span></span>
-<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">line =</span> <span class="fu">str_trim</span>(Lyrics)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(line <span class="sc">!=</span> <span class="st">""</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(line)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add line numbers</span></span>
-<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(song_id, Artist, Album, Title) <span class="sc">%&gt;%</span></span>
-<span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. unite() - Create song identifier</span></span>
-<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"song_album"</span>, Title, Album, <span class="at">sep =</span> <span class="st">" - "</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. pivot_wider() - Create comparison table</span></span>
-<span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a>artist_comparison <span class="ot">&lt;-</span> sales_summary <span class="sc">%&gt;%</span></span>
-<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(artist, country, total_sales) <span class="sc">%&gt;%</span></span>
-<span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> country, </span>
-<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> total_sales,</span>
-<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_prefix =</span> <span class="st">"sales_"</span></span>
-<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary Table</span></span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Wrangling with `dplyr` and `tidyr`</span></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Required Functions</span></span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a>This section demonstrates the use of **7 different `dplyr` functions** and **3 different `tidyr` functions** as required.</span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{r wrangle-sales}</span></span>
+<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Transform sales data"</span></span>
+<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean and transform sales data using multiple dplyr functions</span></span>
+<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a>sales_clean <span class="ot">&lt;-</span> sales <span class="sc">%&gt;%</span></span>
+<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. mutate() - Clean release dates and convert sales to millions</span></span>
+<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">released_clean =</span> <span class="fu">str_remove_all</span>(released, <span class="st">"</span><span class="sc">\\</span><span class="st">s*</span><span class="sc">\\</span><span class="st">([A-Z]+</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">[[0-9]+</span><span class="sc">\\</span><span class="st">]"</span>),</span>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">released =</span> <span class="fu">mdy</span>(released_clean),</span>
+<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">sales_millions =</span> sales <span class="sc">/</span> <span class="dv">1000000</span>,</span>
+<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">years_since_release =</span> <span class="fu">year</span>(<span class="fu">Sys.Date</span>()) <span class="sc">-</span> <span class="fu">year</span>(released)</span>
+<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. select() - Keep only needed columns</span></span>
+<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>released_clean, <span class="sc">-</span>sales) <span class="sc">%&gt;%</span></span>
+<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 3. rename() - Rename for clarity</span></span>
+<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sales =</span> sales_millions) <span class="sc">%&gt;%</span></span>
+<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 4. filter() - Keep only major markets</span></span>
+<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"UK"</span>, <span class="st">"US"</span>, <span class="st">"World"</span>, <span class="st">"WW"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 5. mutate() with case_when() - Standardize country names</span></span>
+<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a>      country <span class="sc">==</span> <span class="st">"WW"</span> <span class="sc">~</span> <span class="st">"World"</span>,</span>
+<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> country</span>
+<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">factor</span>(country, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"US"</span>, <span class="st">"UK"</span>, <span class="st">"World"</span>))</span>
+<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 6. arrange() - Sort by artist and release date</span></span>
+<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(artist, released)</span>
+<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. group_by() and summarise() - Create summary statistics</span></span>
+<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a>sales_summary <span class="ot">&lt;-</span> sales_clean <span class="sc">%&gt;%</span></span>
+<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(artist, country) <span class="sc">%&gt;%</span></span>
+<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_sales =</span> <span class="fu">sum</span>(sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_sales =</span> <span class="fu">mean</span>(sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_albums =</span> <span class="fu">n_distinct</span>(title),</span>
+<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a>    <span class="at">latest_release =</span> <span class="fu">max</span>(released, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r wrangle-lyrics}</span></span>
+<span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Transform lyrics data"</span></span>
+<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a><span class="co"># Process Taylor Swift lyrics using tidyr functions</span></span>
+<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a>ts_lyrics_processed <span class="ot">&lt;-</span> ts_lyrics <span class="sc">%&gt;%</span></span>
+<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add unique identifiers</span></span>
+<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">song_id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. separate_rows() - Split lyrics into individual lines</span></span>
+<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_rows</span>(Lyrics, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Clean and filter</span></span>
+<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">line =</span> <span class="fu">str_trim</span>(Lyrics)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(line <span class="sc">!=</span> <span class="st">""</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(line)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add line numbers</span></span>
+<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(song_id, Artist, Album, Title) <span class="sc">%&gt;%</span></span>
+<span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">line_number =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. unite() - Create song identifier</span></span>
+<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"song_album"</span>, Title, Album, <span class="at">sep =</span> <span class="st">" - "</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. pivot_wider() - Create comparison table</span></span>
+<span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a>artist_comparison <span class="ot">&lt;-</span> sales_summary <span class="sc">%&gt;%</span></span>
+<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(artist, country, total_sales) <span class="sc">%&gt;%</span></span>
+<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> country, </span>
+<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> total_sales,</span>
+<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_prefix =</span> <span class="st">"sales_"</span></span>
+<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r summary-table}</span></span>
-<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Total Album Sales by Artist and Market (in millions)"</span></span>
-<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a><span class="co"># Create formatted table</span></span>
-<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a>artist_comparison <span class="sc">%&gt;%</span></span>
-<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total =</span> sales_US <span class="sc">+</span> sales_UK <span class="sc">+</span> sales_World,</span>
-<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"sales_"</span>), <span class="sc">~</span><span class="fu">round</span>(., <span class="dv">2</span>))</span>
-<span id="cb10-229"><a href="#cb10-229" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-230"><a href="#cb10-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Total)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-231"><a href="#cb10-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
-<span id="cb10-232"><a href="#cb10-232" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Artist"</span>, <span class="st">"US"</span>, <span class="st">"UK"</span>, <span class="st">"World"</span>, <span class="st">"Total"</span>),</span>
-<span id="cb10-233"><a href="#cb10-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"l"</span>, <span class="fu">rep</span>(<span class="st">"r"</span>, <span class="dv">4</span>)),</span>
-<span id="cb10-234"><a href="#cb10-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">format.args =</span> <span class="fu">list</span>(<span class="at">big.mark =</span> <span class="st">","</span>)</span>
-<span id="cb10-235"><a href="#cb10-235" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-236"><a href="#cb10-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-237"><a href="#cb10-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-238"><a href="#cb10-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📈 Data Visualization</span></span>
+<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary Table</span></span>
+<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r summary-table}</span></span>
+<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Total Album Sales by Artist and Market (in millions)"</span></span>
+<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a><span class="co"># Create formatted table</span></span>
+<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a>artist_comparison <span class="sc">%&gt;%</span></span>
+<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-229"><a href="#cb10-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total =</span> sales_US <span class="sc">+</span> sales_UK <span class="sc">+</span> sales_World,</span>
+<span id="cb10-230"><a href="#cb10-230" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"sales_"</span>), <span class="sc">~</span><span class="fu">round</span>(., <span class="dv">2</span>))</span>
+<span id="cb10-231"><a href="#cb10-231" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-232"><a href="#cb10-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Total)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-233"><a href="#cb10-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb10-234"><a href="#cb10-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Artist"</span>, <span class="st">"US"</span>, <span class="st">"UK"</span>, <span class="st">"World"</span>, <span class="st">"Total"</span>),</span>
+<span id="cb10-235"><a href="#cb10-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"l"</span>, <span class="fu">rep</span>(<span class="st">"r"</span>, <span class="dv">4</span>)),</span>
+<span id="cb10-236"><a href="#cb10-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">format.args =</span> <span class="fu">list</span>(<span class="at">big.mark =</span> <span class="st">","</span>)</span>
+<span id="cb10-237"><a href="#cb10-237" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-238"><a href="#cb10-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-239"><a href="#cb10-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plot 1: Market Distribution Analysis</span></span>
+<span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📈 Data Visualization</span></span>
 <span id="cb10-241"><a href="#cb10-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-market-distribution}</span></span>
-<span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Geographic distribution of album sales reveals different market strategies"</span></span>
-<span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-246"><a href="#cb10-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Create stacked percentage bar chart</span></span>
-<span id="cb10-247"><a href="#cb10-247" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sales_summary, <span class="fu">aes</span>(<span class="at">x =</span> artist, <span class="at">y =</span> total_sales, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
-<span id="cb10-248"><a href="#cb10-248" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Main geometry</span></span>
-<span id="cb10-249"><a href="#cb10-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb10-250"><a href="#cb10-250" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Scales</span></span>
-<span id="cb10-251"><a href="#cb10-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb10-252"><a href="#cb10-252" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(),</span>
-<span id="cb10-253"><a href="#cb10-253" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>))</span>
-<span id="cb10-254"><a href="#cb10-254" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-255"><a href="#cb10-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb10-256"><a href="#cb10-256" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"US"</span> <span class="ot">=</span> <span class="st">"#FF6B6B"</span>, <span class="st">"UK"</span> <span class="ot">=</span> <span class="st">"#4ECDC4"</span>, <span class="st">"World"</span> <span class="ot">=</span> <span class="st">"#45B7D1"</span>),</span>
-<span id="cb10-257"><a href="#cb10-257" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">title.position =</span> <span class="st">"top"</span>)</span>
-<span id="cb10-258"><a href="#cb10-258" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-259"><a href="#cb10-259" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Labels</span></span>
-<span id="cb10-260"><a href="#cb10-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-261"><a href="#cb10-261" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Market Composition: Where Do Album Sales Come From?"</span>,</span>
-<span id="cb10-262"><a href="#cb10-262" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Beyoncé shows more balanced global distribution compared to Taylor Swift's US dominance"</span>,</span>
-<span id="cb10-263"><a href="#cb10-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb10-264"><a href="#cb10-264" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Total Sales"</span>,</span>
-<span id="cb10-265"><a href="#cb10-265" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Market"</span>,</span>
-<span id="cb10-266"><a href="#cb10-266" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data: TidyTuesday | Visualization: Mao Yang"</span></span>
-<span id="cb10-267"><a href="#cb10-267" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-268"><a href="#cb10-268" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
-<span id="cb10-269"><a href="#cb10-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb10-270"><a href="#cb10-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-271"><a href="#cb10-271" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">5</span>)),</span>
-<span id="cb10-272"><a href="#cb10-272" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">20</span>)),</span>
-<span id="cb10-273"><a href="#cb10-273" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb10-274"><a href="#cb10-274" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb10-275"><a href="#cb10-275" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb10-276"><a href="#cb10-276" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb10-277"><a href="#cb10-277" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb10-278"><a href="#cb10-278" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>)</span>
-<span id="cb10-279"><a href="#cb10-279" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-280"><a href="#cb10-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-281"><a href="#cb10-281" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span>
-<span id="cb10-282"><a href="#cb10-282" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-283"><a href="#cb10-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-284"><a href="#cb10-284" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plot 2: Temporal Sales Trends with Faceting</span></span>
+<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plot 1: Market Distribution Analysis</span></span>
+<span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-market-distribution}</span></span>
+<span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Geographic distribution of album sales reveals different market strategies"</span></span>
+<span id="cb10-246"><a href="#cb10-246" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb10-247"><a href="#cb10-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-248"><a href="#cb10-248" aria-hidden="true" tabindex="-1"></a><span class="co"># Create stacked percentage bar chart</span></span>
+<span id="cb10-249"><a href="#cb10-249" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sales_summary, <span class="fu">aes</span>(<span class="at">x =</span> artist, <span class="at">y =</span> total_sales, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
+<span id="cb10-250"><a href="#cb10-250" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Main geometry</span></span>
+<span id="cb10-251"><a href="#cb10-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-252"><a href="#cb10-252" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Scales</span></span>
+<span id="cb10-253"><a href="#cb10-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb10-254"><a href="#cb10-254" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(),</span>
+<span id="cb10-255"><a href="#cb10-255" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>))</span>
+<span id="cb10-256"><a href="#cb10-256" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-257"><a href="#cb10-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb10-258"><a href="#cb10-258" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"US"</span> <span class="ot">=</span> <span class="st">"#FF6B6B"</span>, <span class="st">"UK"</span> <span class="ot">=</span> <span class="st">"#4ECDC4"</span>, <span class="st">"World"</span> <span class="ot">=</span> <span class="st">"#45B7D1"</span>),</span>
+<span id="cb10-259"><a href="#cb10-259" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">title.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb10-260"><a href="#cb10-260" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-261"><a href="#cb10-261" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Labels</span></span>
+<span id="cb10-262"><a href="#cb10-262" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-263"><a href="#cb10-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Market Composition: Where Do Album Sales Come From?"</span>,</span>
+<span id="cb10-264"><a href="#cb10-264" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Beyoncé shows more balanced global distribution compared to Taylor Swift's US dominance"</span>,</span>
+<span id="cb10-265"><a href="#cb10-265" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb10-266"><a href="#cb10-266" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Total Sales"</span>,</span>
+<span id="cb10-267"><a href="#cb10-267" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Market"</span>,</span>
+<span id="cb10-268"><a href="#cb10-268" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data: TidyTuesday | Visualization: Mao Yang"</span></span>
+<span id="cb10-269"><a href="#cb10-269" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-270"><a href="#cb10-270" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
+<span id="cb10-271"><a href="#cb10-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb10-272"><a href="#cb10-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-273"><a href="#cb10-273" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">5</span>)),</span>
+<span id="cb10-274"><a href="#cb10-274" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">20</span>)),</span>
+<span id="cb10-275"><a href="#cb10-275" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb10-276"><a href="#cb10-276" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb10-277"><a href="#cb10-277" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-278"><a href="#cb10-278" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-279"><a href="#cb10-279" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb10-280"><a href="#cb10-280" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>)</span>
+<span id="cb10-281"><a href="#cb10-281" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-282"><a href="#cb10-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-283"><a href="#cb10-283" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span>
+<span id="cb10-284"><a href="#cb10-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-285"><a href="#cb10-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-286"><a href="#cb10-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-temporal-trends}</span></span>
-<span id="cb10-287"><a href="#cb10-287" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Album sales trends reveal different trajectories across markets"</span></span>
-<span id="cb10-288"><a href="#cb10-288" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 10</span></span>
-<span id="cb10-289"><a href="#cb10-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-290"><a href="#cb10-290" aria-hidden="true" tabindex="-1"></a><span class="co"># Create faceted time series plot</span></span>
-<span id="cb10-291"><a href="#cb10-291" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> sales_clean <span class="sc">%&gt;%</span></span>
-<span id="cb10-292"><a href="#cb10-292" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> released, <span class="at">y =</span> sales, <span class="at">color =</span> artist)) <span class="sc">+</span></span>
-<span id="cb10-293"><a href="#cb10-293" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Points and smooth lines</span></span>
-<span id="cb10-294"><a href="#cb10-294" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb10-295"><a href="#cb10-295" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(</span>
-<span id="cb10-296"><a href="#cb10-296" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"loess"</span>, </span>
-<span id="cb10-297"><a href="#cb10-297" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb10-298"><a href="#cb10-298" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
-<span id="cb10-299"><a href="#cb10-299" aria-hidden="true" tabindex="-1"></a>    <span class="at">span =</span> <span class="fl">0.75</span></span>
-<span id="cb10-300"><a href="#cb10-300" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-301"><a href="#cb10-301" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Faceting with facet_wrap</span></span>
-<span id="cb10-302"><a href="#cb10-302" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(</span>
-<span id="cb10-303"><a href="#cb10-303" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span> country, </span>
-<span id="cb10-304"><a href="#cb10-304" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">3</span>, </span>
-<span id="cb10-305"><a href="#cb10-305" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="st">"free_y"</span></span>
-<span id="cb10-306"><a href="#cb10-306" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-307"><a href="#cb10-307" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Scales</span></span>
-<span id="cb10-308"><a href="#cb10-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb10-309"><a href="#cb10-309" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Beyoncé"</span> <span class="ot">=</span> <span class="st">"#FF1493"</span>, <span class="st">"Taylor Swift"</span> <span class="ot">=</span> <span class="st">"#1E90FF"</span>),</span>
-<span id="cb10-310"><a href="#cb10-310" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>)</span>
-<span id="cb10-311"><a href="#cb10-311" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-312"><a href="#cb10-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(</span>
-<span id="cb10-313"><a href="#cb10-313" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_breaks =</span> <span class="st">"2 years"</span>, </span>
-<span id="cb10-314"><a href="#cb10-314" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_labels =</span> <span class="st">"%Y"</span></span>
-<span id="cb10-315"><a href="#cb10-315" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-316"><a href="#cb10-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb10-317"><a href="#cb10-317" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>(<span class="at">suffix =</span> <span class="st">"M"</span>)</span>
-<span id="cb10-318"><a href="#cb10-318" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-319"><a href="#cb10-319" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Labels</span></span>
-<span id="cb10-320"><a href="#cb10-320" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-321"><a href="#cb10-321" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Evolution of Album Sales Across Markets (2003-2019)"</span>,</span>
-<span id="cb10-322"><a href="#cb10-322" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Taylor Swift maintains stronger US presence while Beyoncé shows consistent global appeal"</span>,</span>
-<span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Release Year"</span>,</span>
-<span id="cb10-324"><a href="#cb10-324" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Album Sales"</span>,</span>
-<span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Shaded areas represent 95% confidence intervals"</span></span>
-<span id="cb10-326"><a href="#cb10-326" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-327"><a href="#cb10-327" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
-<span id="cb10-328"><a href="#cb10-328" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb10-329"><a href="#cb10-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-330"><a href="#cb10-330" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb10-331"><a href="#cb10-331" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"gray40"</span>),</span>
-<span id="cb10-332"><a href="#cb10-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb10-333"><a href="#cb10-333" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"gray95"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb10-334"><a href="#cb10-334" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb10-335"><a href="#cb10-335" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">"lines"</span>),</span>
-<span id="cb10-336"><a href="#cb10-336" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
-<span id="cb10-337"><a href="#cb10-337" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-338"><a href="#cb10-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-339"><a href="#cb10-339" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p2)</span>
-<span id="cb10-340"><a href="#cb10-340" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-341"><a href="#cb10-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plot 3: Sentiment Analysis with Facet Grid</span></span>
+<span id="cb10-286"><a href="#cb10-286" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plot 2: Temporal Sales Trends with Faceting</span></span>
+<span id="cb10-287"><a href="#cb10-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-288"><a href="#cb10-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-temporal-trends}</span></span>
+<span id="cb10-289"><a href="#cb10-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Album sales trends reveal different trajectories across markets"</span></span>
+<span id="cb10-290"><a href="#cb10-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 10</span></span>
+<span id="cb10-291"><a href="#cb10-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-292"><a href="#cb10-292" aria-hidden="true" tabindex="-1"></a><span class="co"># Create faceted time series plot</span></span>
+<span id="cb10-293"><a href="#cb10-293" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> sales_clean <span class="sc">%&gt;%</span></span>
+<span id="cb10-294"><a href="#cb10-294" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> released, <span class="at">y =</span> sales, <span class="at">color =</span> artist)) <span class="sc">+</span></span>
+<span id="cb10-295"><a href="#cb10-295" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Points and smooth lines</span></span>
+<span id="cb10-296"><a href="#cb10-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-297"><a href="#cb10-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(</span>
+<span id="cb10-298"><a href="#cb10-298" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"loess"</span>, </span>
+<span id="cb10-299"><a href="#cb10-299" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb10-300"><a href="#cb10-300" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
+<span id="cb10-301"><a href="#cb10-301" aria-hidden="true" tabindex="-1"></a>    <span class="at">span =</span> <span class="fl">0.75</span></span>
+<span id="cb10-302"><a href="#cb10-302" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-303"><a href="#cb10-303" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Faceting with facet_wrap</span></span>
+<span id="cb10-304"><a href="#cb10-304" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(</span>
+<span id="cb10-305"><a href="#cb10-305" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span> country, </span>
+<span id="cb10-306"><a href="#cb10-306" aria-hidden="true" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">3</span>, </span>
+<span id="cb10-307"><a href="#cb10-307" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="st">"free_y"</span></span>
+<span id="cb10-308"><a href="#cb10-308" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-309"><a href="#cb10-309" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Scales</span></span>
+<span id="cb10-310"><a href="#cb10-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb10-311"><a href="#cb10-311" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Beyoncé"</span> <span class="ot">=</span> <span class="st">"#FF1493"</span>, <span class="st">"Taylor Swift"</span> <span class="ot">=</span> <span class="st">"#1E90FF"</span>),</span>
+<span id="cb10-312"><a href="#cb10-312" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>)</span>
+<span id="cb10-313"><a href="#cb10-313" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-314"><a href="#cb10-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(</span>
+<span id="cb10-315"><a href="#cb10-315" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_breaks =</span> <span class="st">"2 years"</span>, </span>
+<span id="cb10-316"><a href="#cb10-316" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_labels =</span> <span class="st">"%Y"</span></span>
+<span id="cb10-317"><a href="#cb10-317" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-318"><a href="#cb10-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb10-319"><a href="#cb10-319" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>(<span class="at">suffix =</span> <span class="st">"M"</span>)</span>
+<span id="cb10-320"><a href="#cb10-320" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-321"><a href="#cb10-321" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Labels</span></span>
+<span id="cb10-322"><a href="#cb10-322" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Evolution of Album Sales Across Markets (2003-2019)"</span>,</span>
+<span id="cb10-324"><a href="#cb10-324" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Taylor Swift maintains stronger US presence while Beyoncé shows consistent global appeal"</span>,</span>
+<span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Release Year"</span>,</span>
+<span id="cb10-326"><a href="#cb10-326" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Album Sales"</span>,</span>
+<span id="cb10-327"><a href="#cb10-327" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Shaded areas represent 95% confidence intervals"</span></span>
+<span id="cb10-328"><a href="#cb10-328" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-329"><a href="#cb10-329" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
+<span id="cb10-330"><a href="#cb10-330" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb10-331"><a href="#cb10-331" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-332"><a href="#cb10-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb10-333"><a href="#cb10-333" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"gray40"</span>),</span>
+<span id="cb10-334"><a href="#cb10-334" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb10-335"><a href="#cb10-335" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"gray95"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb10-336"><a href="#cb10-336" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb10-337"><a href="#cb10-337" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">"lines"</span>),</span>
+<span id="cb10-338"><a href="#cb10-338" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb10-339"><a href="#cb10-339" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-340"><a href="#cb10-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-341"><a href="#cb10-341" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p2)</span>
+<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-343"><a href="#cb10-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-344"><a href="#cb10-344" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-sentiment-grid}</span></span>
-<span id="cb10-345"><a href="#cb10-345" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Lyrical sentiment patterns reveal artistic differences"</span></span>
-<span id="cb10-346"><a href="#cb10-346" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 10</span></span>
-<span id="cb10-347"><a href="#cb10-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-348"><a href="#cb10-348" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare sentiment data for both artists</span></span>
-<span id="cb10-349"><a href="#cb10-349" aria-hidden="true" tabindex="-1"></a>sentiment_analysis <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb10-350"><a href="#cb10-350" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Beyoncé lyrics</span></span>
-<span id="cb10-351"><a href="#cb10-351" aria-hidden="true" tabindex="-1"></a>  b_lyrics <span class="sc">%&gt;%</span> </span>
-<span id="cb10-352"><a href="#cb10-352" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">artist =</span> <span class="st">"Beyoncé"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-353"><a href="#cb10-353" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(artist, song_name, line),</span>
-<span id="cb10-354"><a href="#cb10-354" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Taylor Swift lyrics  </span></span>
-<span id="cb10-355"><a href="#cb10-355" aria-hidden="true" tabindex="-1"></a>  ts_lyrics_processed <span class="sc">%&gt;%</span> </span>
-<span id="cb10-356"><a href="#cb10-356" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">artist =</span> <span class="st">"Taylor Swift"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-357"><a href="#cb10-357" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(artist, <span class="at">song_name =</span> Title, line)</span>
-<span id="cb10-358"><a href="#cb10-358" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-359"><a href="#cb10-359" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Tokenize and join with sentiment lexicon</span></span>
-<span id="cb10-360"><a href="#cb10-360" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, line) <span class="sc">%&gt;%</span></span>
-<span id="cb10-361"><a href="#cb10-361" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"bing"</span>), <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-362"><a href="#cb10-362" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate sentiment scores by song</span></span>
-<span id="cb10-363"><a href="#cb10-363" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(artist, song_name, sentiment) <span class="sc">%&gt;%</span></span>
-<span id="cb10-364"><a href="#cb10-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-365"><a href="#cb10-365" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-366"><a href="#cb10-366" aria-hidden="true" tabindex="-1"></a>    <span class="at">sentiment_score =</span> (positive <span class="sc">-</span> negative) <span class="sc">/</span> (positive <span class="sc">+</span> negative),</span>
-<span id="cb10-367"><a href="#cb10-367" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_words =</span> positive <span class="sc">+</span> negative,</span>
-<span id="cb10-368"><a href="#cb10-368" aria-hidden="true" tabindex="-1"></a>    <span class="at">sentiment_category =</span> <span class="fu">case_when</span>(</span>
-<span id="cb10-369"><a href="#cb10-369" aria-hidden="true" tabindex="-1"></a>      sentiment_score <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"Negative"</span>,</span>
-<span id="cb10-370"><a href="#cb10-370" aria-hidden="true" tabindex="-1"></a>      sentiment_score <span class="sc">&gt;</span> <span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"Positive"</span>, </span>
-<span id="cb10-371"><a href="#cb10-371" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Neutral"</span></span>
-<span id="cb10-372"><a href="#cb10-372" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb10-373"><a href="#cb10-373" aria-hidden="true" tabindex="-1"></a>    <span class="at">word_count_cat =</span> <span class="fu">case_when</span>(</span>
-<span id="cb10-374"><a href="#cb10-374" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"Short Songs"</span>,</span>
-<span id="cb10-375"><a href="#cb10-375" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Medium Songs"</span>,</span>
-<span id="cb10-376"><a href="#cb10-376" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Long Songs"</span></span>
-<span id="cb10-377"><a href="#cb10-377" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb10-378"><a href="#cb10-378" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-379"><a href="#cb10-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_words <span class="sc">&gt;=</span> <span class="dv">10</span>)</span>
-<span id="cb10-380"><a href="#cb10-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-381"><a href="#cb10-381" aria-hidden="true" tabindex="-1"></a><span class="co"># Create facet grid plot</span></span>
-<span id="cb10-382"><a href="#cb10-382" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> sentiment_analysis <span class="sc">%&gt;%</span></span>
-<span id="cb10-383"><a href="#cb10-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sentiment_score, <span class="at">fill =</span> sentiment_category)) <span class="sc">+</span></span>
-<span id="cb10-384"><a href="#cb10-384" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Density plot</span></span>
-<span id="cb10-385"><a href="#cb10-385" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb10-386"><a href="#cb10-386" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use facet_grid for two-dimensional faceting</span></span>
-<span id="cb10-387"><a href="#cb10-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(word_count_cat <span class="sc">~</span> artist, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb10-388"><a href="#cb10-388" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Scales</span></span>
-<span id="cb10-389"><a href="#cb10-389" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb10-390"><a href="#cb10-390" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Negative"</span> <span class="ot">=</span> <span class="st">"#E74C3C"</span>, <span class="st">"Neutral"</span> <span class="ot">=</span> <span class="st">"#95A5A6"</span>, <span class="st">"Positive"</span> <span class="ot">=</span> <span class="st">"#2ECC71"</span>),</span>
-<span id="cb10-391"><a href="#cb10-391" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="st">"none"</span></span>
-<span id="cb10-392"><a href="#cb10-392" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-393"><a href="#cb10-393" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb10-394"><a href="#cb10-394" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
-<span id="cb10-395"><a href="#cb10-395" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb10-396"><a href="#cb10-396" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-397"><a href="#cb10-397" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Labels</span></span>
-<span id="cb10-398"><a href="#cb10-398" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-399"><a href="#cb10-399" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Song Sentiment by Artist and Song Length"</span>,</span>
-<span id="cb10-400"><a href="#cb10-400" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Analyzing emotional content across different song categories"</span>,</span>
-<span id="cb10-401"><a href="#cb10-401" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sentiment Score"</span>,</span>
-<span id="cb10-402"><a href="#cb10-402" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
-<span id="cb10-403"><a href="#cb10-403" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Based on Bing sentiment lexicon"</span></span>
-<span id="cb10-404"><a href="#cb10-404" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-405"><a href="#cb10-405" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
-<span id="cb10-406"><a href="#cb10-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb10-407"><a href="#cb10-407" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-408"><a href="#cb10-408" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb10-409"><a href="#cb10-409" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"gray40"</span>),</span>
-<span id="cb10-410"><a href="#cb10-410" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb10-411"><a href="#cb10-411" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"gray95"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb10-412"><a href="#cb10-412" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>)</span>
-<span id="cb10-413"><a href="#cb10-413" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-414"><a href="#cb10-414" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-415"><a href="#cb10-415" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p3)</span>
-<span id="cb10-416"><a href="#cb10-416" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-417"><a href="#cb10-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-418"><a href="#cb10-418" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🌐 External Resources</span></span>
+<span id="cb10-344"><a href="#cb10-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plot 3: Sentiment Analysis with Facet Grid</span></span>
+<span id="cb10-345"><a href="#cb10-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-346"><a href="#cb10-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-sentiment-grid}</span></span>
+<span id="cb10-347"><a href="#cb10-347" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Lyrical sentiment patterns reveal artistic differences"</span></span>
+<span id="cb10-348"><a href="#cb10-348" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 10</span></span>
+<span id="cb10-349"><a href="#cb10-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-350"><a href="#cb10-350" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare sentiment data for both artists</span></span>
+<span id="cb10-351"><a href="#cb10-351" aria-hidden="true" tabindex="-1"></a>sentiment_analysis <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb10-352"><a href="#cb10-352" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Beyoncé lyrics</span></span>
+<span id="cb10-353"><a href="#cb10-353" aria-hidden="true" tabindex="-1"></a>  b_lyrics <span class="sc">%&gt;%</span> </span>
+<span id="cb10-354"><a href="#cb10-354" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">artist =</span> <span class="st">"Beyoncé"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-355"><a href="#cb10-355" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(artist, song_name, line),</span>
+<span id="cb10-356"><a href="#cb10-356" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Taylor Swift lyrics  </span></span>
+<span id="cb10-357"><a href="#cb10-357" aria-hidden="true" tabindex="-1"></a>  ts_lyrics_processed <span class="sc">%&gt;%</span> </span>
+<span id="cb10-358"><a href="#cb10-358" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">artist =</span> <span class="st">"Taylor Swift"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-359"><a href="#cb10-359" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(artist, <span class="at">song_name =</span> Title, line)</span>
+<span id="cb10-360"><a href="#cb10-360" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-361"><a href="#cb10-361" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Tokenize and join with sentiment lexicon</span></span>
+<span id="cb10-362"><a href="#cb10-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, line) <span class="sc">%&gt;%</span></span>
+<span id="cb10-363"><a href="#cb10-363" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_sentiments</span>(<span class="st">"bing"</span>), <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-364"><a href="#cb10-364" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate sentiment scores by song</span></span>
+<span id="cb10-365"><a href="#cb10-365" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(artist, song_name, sentiment) <span class="sc">%&gt;%</span></span>
+<span id="cb10-366"><a href="#cb10-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sentiment, <span class="at">values_from =</span> n, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-367"><a href="#cb10-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-368"><a href="#cb10-368" aria-hidden="true" tabindex="-1"></a>    <span class="at">sentiment_score =</span> (positive <span class="sc">-</span> negative) <span class="sc">/</span> (positive <span class="sc">+</span> negative),</span>
+<span id="cb10-369"><a href="#cb10-369" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_words =</span> positive <span class="sc">+</span> negative,</span>
+<span id="cb10-370"><a href="#cb10-370" aria-hidden="true" tabindex="-1"></a>    <span class="at">sentiment_category =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-371"><a href="#cb10-371" aria-hidden="true" tabindex="-1"></a>      sentiment_score <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"Negative"</span>,</span>
+<span id="cb10-372"><a href="#cb10-372" aria-hidden="true" tabindex="-1"></a>      sentiment_score <span class="sc">&gt;</span> <span class="fl">0.2</span> <span class="sc">~</span> <span class="st">"Positive"</span>, </span>
+<span id="cb10-373"><a href="#cb10-373" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Neutral"</span></span>
+<span id="cb10-374"><a href="#cb10-374" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb10-375"><a href="#cb10-375" aria-hidden="true" tabindex="-1"></a>    <span class="at">word_count_cat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-376"><a href="#cb10-376" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"Short Songs (Words &lt;30)"</span>,</span>
+<span id="cb10-377"><a href="#cb10-377" aria-hidden="true" tabindex="-1"></a>      total_words <span class="sc">&lt;</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Medium Songs (30 &lt; Words &lt; 60)"</span>,</span>
+<span id="cb10-378"><a href="#cb10-378" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Long Songs (Wrods &gt; 60)"</span></span>
+<span id="cb10-379"><a href="#cb10-379" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-380"><a href="#cb10-380" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-381"><a href="#cb10-381" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_words <span class="sc">&gt;=</span> <span class="dv">10</span>)</span>
+<span id="cb10-382"><a href="#cb10-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-383"><a href="#cb10-383" aria-hidden="true" tabindex="-1"></a><span class="co"># Create facet grid plot</span></span>
+<span id="cb10-384"><a href="#cb10-384" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> sentiment_analysis <span class="sc">%&gt;%</span></span>
+<span id="cb10-385"><a href="#cb10-385" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sentiment_score, <span class="at">fill =</span> sentiment_category)) <span class="sc">+</span></span>
+<span id="cb10-386"><a href="#cb10-386" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Density plot</span></span>
+<span id="cb10-387"><a href="#cb10-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb10-388"><a href="#cb10-388" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use facet_grid for two-dimensional faceting</span></span>
+<span id="cb10-389"><a href="#cb10-389" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(word_count_cat <span class="sc">~</span> artist, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb10-390"><a href="#cb10-390" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Scales</span></span>
+<span id="cb10-391"><a href="#cb10-391" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb10-392"><a href="#cb10-392" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Negative"</span> <span class="ot">=</span> <span class="st">"#E74C3C"</span>, <span class="st">"Neutral"</span> <span class="ot">=</span> <span class="st">"#95A5A6"</span>, <span class="st">"Positive"</span> <span class="ot">=</span> <span class="st">"#2ECC71"</span>),</span>
+<span id="cb10-393"><a href="#cb10-393" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="st">"none"</span></span>
+<span id="cb10-394"><a href="#cb10-394" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-395"><a href="#cb10-395" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb10-396"><a href="#cb10-396" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb10-397"><a href="#cb10-397" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
+<span id="cb10-398"><a href="#cb10-398" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-399"><a href="#cb10-399" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Labels</span></span>
+<span id="cb10-400"><a href="#cb10-400" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-401"><a href="#cb10-401" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Song Sentiment by Artist and Song Length"</span>,</span>
+<span id="cb10-402"><a href="#cb10-402" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Analyzing emotional content across different song categories"</span>,</span>
+<span id="cb10-403"><a href="#cb10-403" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sentiment Score"</span>,</span>
+<span id="cb10-404"><a href="#cb10-404" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
+<span id="cb10-405"><a href="#cb10-405" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Based on Bing sentiment lexicon | Sentiment Score = (Positive - Negative) / (Positive + Negative)"</span></span>
+<span id="cb10-406"><a href="#cb10-406" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-407"><a href="#cb10-407" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Theme</span></span>
+<span id="cb10-408"><a href="#cb10-408" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb10-409"><a href="#cb10-409" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-410"><a href="#cb10-410" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb10-411"><a href="#cb10-411" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"gray40"</span>),</span>
+<span id="cb10-412"><a href="#cb10-412" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb10-413"><a href="#cb10-413" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"gray95"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb10-414"><a href="#cb10-414" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>)</span>
+<span id="cb10-415"><a href="#cb10-415" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-416"><a href="#cb10-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-417"><a href="#cb10-417" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p3)</span>
+<span id="cb10-418"><a href="#cb10-418" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-419"><a href="#cb10-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-420"><a href="#cb10-420" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb10-421"><a href="#cb10-421" aria-hidden="true" tabindex="-1"></a><span class="fu">## Industry Insight</span></span>
-<span id="cb10-422"><a href="#cb10-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-423"><a href="#cb10-423" aria-hidden="true" tabindex="-1"></a>For more on music industry analytics, check out the <span class="co">[</span><span class="ot">IFPI Global Music Report</span><span class="co">](https://www.ifpi.org/our-industry/industry-data/)</span>.</span>
-<span id="cb10-424"><a href="#cb10-424" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-425"><a href="#cb10-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-426"><a href="#cb10-426" aria-hidden="true" tabindex="-1"></a><span class="fu">### Music Industry Visualization</span></span>
+<span id="cb10-420"><a href="#cb10-420" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🌐 External Resources</span></span>
+<span id="cb10-421"><a href="#cb10-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-422"><a href="#cb10-422" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb10-423"><a href="#cb10-423" aria-hidden="true" tabindex="-1"></a><span class="fu">## Industry Insight</span></span>
+<span id="cb10-424"><a href="#cb10-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-425"><a href="#cb10-425" aria-hidden="true" tabindex="-1"></a>For more on music industry analytics, check out the <span class="co">[</span><span class="ot">IFPI Global Music Report</span><span class="co">](https://www.ifpi.org/our-industry/industry-data/)</span>.</span>
+<span id="cb10-426"><a href="#cb10-426" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-427"><a href="#cb10-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-428"><a href="#cb10-428" aria-hidden="true" tabindex="-1"></a><span class="al">![Global Music Industry Revenue Trends](https://www.wipo.int/dpp-files/73764/ifpi-music-revenue-2024-73661.png)</span>{width="80%" fig-align="center"}</span>
+<span id="cb10-428"><a href="#cb10-428" aria-hidden="true" tabindex="-1"></a><span class="fu">### Music Industry Visualization</span></span>
 <span id="cb10-429"><a href="#cb10-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-430"><a href="#cb10-430" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Key Findings</span></span>
+<span id="cb10-430"><a href="#cb10-430" aria-hidden="true" tabindex="-1"></a><span class="al">![Global Music Industry Revenue Trends](https://www.wipo.int/dpp-files/73764/ifpi-music-revenue-2024-73661.png)</span>{width="80%" fig-align="center"}</span>
 <span id="cb10-431"><a href="#cb10-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-432"><a href="#cb10-432" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
-<span id="cb10-433"><a href="#cb10-433" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main Discovery</span></span>
-<span id="cb10-434"><a href="#cb10-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-435"><a href="#cb10-435" aria-hidden="true" tabindex="-1"></a>Taylor Swift shows stronger domestic (US) market performance while Beyoncé demonstrates more balanced global appeal, with both artists showing declining sales trends over time.</span>
-<span id="cb10-436"><a href="#cb10-436" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-437"><a href="#cb10-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-438"><a href="#cb10-438" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb10-439"><a href="#cb10-439" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sentiment Analysis</span></span>
-<span id="cb10-440"><a href="#cb10-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-441"><a href="#cb10-441" aria-hidden="true" tabindex="-1"></a>Both artists use predominantly positive language in their lyrics, but Taylor Swift shows more variation in emotional content across albums.</span>
-<span id="cb10-442"><a href="#cb10-442" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-443"><a href="#cb10-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-444"><a href="#cb10-444" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional Statistics {.column-margin}</span></span>
+<span id="cb10-432"><a href="#cb10-432" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Key Findings</span></span>
+<span id="cb10-433"><a href="#cb10-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-434"><a href="#cb10-434" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb10-435"><a href="#cb10-435" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main Discovery</span></span>
+<span id="cb10-436"><a href="#cb10-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-437"><a href="#cb10-437" aria-hidden="true" tabindex="-1"></a>Taylor Swift shows stronger domestic (US) market performance while Beyoncé demonstrates more balanced global appeal, with both artists showing declining sales trends over time.</span>
+<span id="cb10-438"><a href="#cb10-438" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-439"><a href="#cb10-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-440"><a href="#cb10-440" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb10-441"><a href="#cb10-441" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sentiment Analysis</span></span>
+<span id="cb10-442"><a href="#cb10-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-443"><a href="#cb10-443" aria-hidden="true" tabindex="-1"></a>Both artists use predominantly positive language in their lyrics, but Taylor Swift shows more variation in emotional content across albums.</span>
+<span id="cb10-444"><a href="#cb10-444" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-445"><a href="#cb10-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-446"><a href="#cb10-446" aria-hidden="true" tabindex="-1"></a>::: column-margin</span>
-<span id="cb10-447"><a href="#cb10-447" aria-hidden="true" tabindex="-1"></a>**Quick Facts:**</span>
-<span id="cb10-448"><a href="#cb10-448" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-449"><a href="#cb10-449" aria-hidden="true" tabindex="-1"></a>📊 Total albums: <span class="in">`r n_distinct(sales$title)`</span></span>
+<span id="cb10-446"><a href="#cb10-446" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional Statistics {.column-margin}</span></span>
+<span id="cb10-447"><a href="#cb10-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-448"><a href="#cb10-448" aria-hidden="true" tabindex="-1"></a>::: column-margin</span>
+<span id="cb10-449"><a href="#cb10-449" aria-hidden="true" tabindex="-1"></a>**Quick Facts:**</span>
 <span id="cb10-450"><a href="#cb10-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-451"><a href="#cb10-451" aria-hidden="true" tabindex="-1"></a>📅 Date range: <span class="in">`r format(min(sales_clean$released, na.rm=TRUE), "%Y")`</span> - <span class="in">`r format(max(sales_clean$released, na.rm=TRUE), "%Y")`</span></span>
+<span id="cb10-451"><a href="#cb10-451" aria-hidden="true" tabindex="-1"></a>📊 Total albums: <span class="in">`r n_distinct(sales$title)`</span></span>
 <span id="cb10-452"><a href="#cb10-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-453"><a href="#cb10-453" aria-hidden="true" tabindex="-1"></a>💿 Avg sales: <span class="in">`r round(mean(sales_clean$sales, na.rm=TRUE), 1)`</span>M</span>
+<span id="cb10-453"><a href="#cb10-453" aria-hidden="true" tabindex="-1"></a>📅 Date range: <span class="in">`r format(min(sales_clean$released, na.rm=TRUE), "%Y")`</span> - <span class="in">`r format(max(sales_clean$released, na.rm=TRUE), "%Y")`</span></span>
 <span id="cb10-454"><a href="#cb10-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-455"><a href="#cb10-455" aria-hidden="true" tabindex="-1"></a>🎵 Songs analyzed: <span class="in">`r n_distinct(c(b_lyrics$song_name, ts_lyrics_processed$Title))`</span></span>
-<span id="cb10-456"><a href="#cb10-456" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-457"><a href="#cb10-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-458"><a href="#cb10-458" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📝 Summary</span></span>
+<span id="cb10-455"><a href="#cb10-455" aria-hidden="true" tabindex="-1"></a>💿 Avg sales: <span class="in">`r round(mean(sales_clean$sales, na.rm=TRUE), 1)`</span>M</span>
+<span id="cb10-456"><a href="#cb10-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-457"><a href="#cb10-457" aria-hidden="true" tabindex="-1"></a>🎵 Songs analyzed: <span class="in">`r n_distinct(c(b_lyrics$song_name, ts_lyrics_processed$Title))`</span></span>
+<span id="cb10-458"><a href="#cb10-458" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-459"><a href="#cb10-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-460"><a href="#cb10-460" aria-hidden="true" tabindex="-1"></a>This comprehensive analysis of Beyoncé and Taylor Swift's careers reveals distinct patterns in both commercial success and artistic expression. Taylor Swift demonstrates exceptional strength in the US market, maintaining consistent high sales volumes domestically, while Beyoncé shows a more globally distributed fanbase. Both artists experienced peak sales in their early careers, with a general declining trend that reflects broader industry changes due to streaming. The sentiment analysis reveals that both artists predominantly use positive language, though Taylor Swift's lyrics show greater emotional range across albums. The faceted visualizations effectively illustrated how market dynamics vary by geography and how sentiment patterns differ by song length, providing valuable insights for music industry professionals and data scientists alike.</span>
+<span id="cb10-460"><a href="#cb10-460" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📝 Summary</span></span>
 <span id="cb10-461"><a href="#cb10-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-462"><a href="#cb10-462" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📊 Functions Used from Required Packages</span></span>
+<span id="cb10-462"><a href="#cb10-462" aria-hidden="true" tabindex="-1"></a>This comprehensive analysis of Beyoncé and Taylor Swift's careers reveals distinct patterns in both commercial success and artistic expression. Taylor Swift demonstrates exceptional strength in the US market, maintaining consistent high sales volumes domestically, while Beyoncé shows a more globally distributed fanbase. Both artists experienced peak sales in their early careers, with a general declining trend that reflects broader industry changes due to streaming. The sentiment analysis reveals that both artists predominantly use positive language, though Taylor Swift's lyrics show greater emotional range across albums. The faceted visualizations effectively illustrated how market dynamics vary by geography and how sentiment patterns differ by song length, providing valuable insights for music industry professionals and data scientists alike.</span>
 <span id="cb10-463"><a href="#cb10-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-464"><a href="#cb10-464" aria-hidden="true" tabindex="-1"></a><span class="fu">### **dplyr functions used (7+):**</span></span>
+<span id="cb10-464"><a href="#cb10-464" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📊 Functions Used from Required Packages</span></span>
 <span id="cb10-465"><a href="#cb10-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-466"><a href="#cb10-466" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`mutate()`</span>: Created new variables and transformed data</span>
-<span id="cb10-467"><a href="#cb10-467" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`select()`</span>: Selected specific columns</span>
-<span id="cb10-468"><a href="#cb10-468" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`filter()`</span>: Filtered rows based on conditions</span>
-<span id="cb10-469"><a href="#cb10-469" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`group_by()`</span>: Grouped data for analysis</span>
-<span id="cb10-470"><a href="#cb10-470" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`summarise()`</span>: Created summary statistics</span>
-<span id="cb10-471"><a href="#cb10-471" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`arrange()`</span>: Sorted data</span>
-<span id="cb10-472"><a href="#cb10-472" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`case_when()`</span>: Created conditional logic</span>
-<span id="cb10-473"><a href="#cb10-473" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`rename()`</span>: Renamed columns for clarity</span>
-<span id="cb10-474"><a href="#cb10-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-475"><a href="#cb10-475" aria-hidden="true" tabindex="-1"></a><span class="fu">### **tidyr functions used (3):**</span></span>
+<span id="cb10-466"><a href="#cb10-466" aria-hidden="true" tabindex="-1"></a><span class="fu">### **dplyr functions used (7+):**</span></span>
+<span id="cb10-467"><a href="#cb10-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-468"><a href="#cb10-468" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`mutate()`</span>: Created new variables and transformed data</span>
+<span id="cb10-469"><a href="#cb10-469" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`select()`</span>: Selected specific columns</span>
+<span id="cb10-470"><a href="#cb10-470" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`filter()`</span>: Filtered rows based on conditions</span>
+<span id="cb10-471"><a href="#cb10-471" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`group_by()`</span>: Grouped data for analysis</span>
+<span id="cb10-472"><a href="#cb10-472" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`summarise()`</span>: Created summary statistics</span>
+<span id="cb10-473"><a href="#cb10-473" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`arrange()`</span>: Sorted data</span>
+<span id="cb10-474"><a href="#cb10-474" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`case_when()`</span>: Created conditional logic</span>
+<span id="cb10-475"><a href="#cb10-475" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`rename()`</span>: Renamed columns for clarity</span>
 <span id="cb10-476"><a href="#cb10-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-477"><a href="#cb10-477" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`separate_rows()`</span>: Split lyrics into individual lines</span>
-<span id="cb10-478"><a href="#cb10-478" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`pivot_wider()`</span>: Reshaped data from long to wide</span>
-<span id="cb10-479"><a href="#cb10-479" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`unite()`</span>: Combined columns into single identifier</span>
-<span id="cb10-480"><a href="#cb10-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-481"><a href="#cb10-481" aria-hidden="true" tabindex="-1"></a><span class="fu">### **ggplot2 functions used (8+):**</span></span>
+<span id="cb10-477"><a href="#cb10-477" aria-hidden="true" tabindex="-1"></a><span class="fu">### **tidyr functions used (3):**</span></span>
+<span id="cb10-478"><a href="#cb10-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-479"><a href="#cb10-479" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`separate_rows()`</span>: Split lyrics into individual lines</span>
+<span id="cb10-480"><a href="#cb10-480" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`pivot_wider()`</span>: Reshaped data from long to wide</span>
+<span id="cb10-481"><a href="#cb10-481" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`unite()`</span>: Combined columns into single identifier</span>
 <span id="cb10-482"><a href="#cb10-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-483"><a href="#cb10-483" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`ggplot()`</span>: Initialized plots</span>
-<span id="cb10-484"><a href="#cb10-484" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_bar()`</span>: Created bar charts</span>
-<span id="cb10-485"><a href="#cb10-485" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_point()`</span>: Added scatter points</span>
-<span id="cb10-486"><a href="#cb10-486" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_smooth()`</span>: Added trend lines</span>
-<span id="cb10-487"><a href="#cb10-487" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_density()`</span>: Created density plots</span>
-<span id="cb10-488"><a href="#cb10-488" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`facet_wrap()`</span>: Created wrapped facets</span>
-<span id="cb10-489"><a href="#cb10-489" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`facet_grid()`</span>: Created grid facets</span>
-<span id="cb10-490"><a href="#cb10-490" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`scale_*()`</span>: Various scale functions for customization</span>
-<span id="cb10-491"><a href="#cb10-491" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`theme_*()`</span>: Customized plot appearance</span>
-<span id="cb10-492"><a href="#cb10-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-493"><a href="#cb10-493" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📚 References</span></span>
+<span id="cb10-483"><a href="#cb10-483" aria-hidden="true" tabindex="-1"></a><span class="fu">### **ggplot2 functions used (8+):**</span></span>
+<span id="cb10-484"><a href="#cb10-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-485"><a href="#cb10-485" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`ggplot()`</span>: Initialized plots</span>
+<span id="cb10-486"><a href="#cb10-486" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_bar()`</span>: Created bar charts</span>
+<span id="cb10-487"><a href="#cb10-487" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_point()`</span>: Added scatter points</span>
+<span id="cb10-488"><a href="#cb10-488" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_smooth()`</span>: Added trend lines</span>
+<span id="cb10-489"><a href="#cb10-489" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`geom_density()`</span>: Created density plots</span>
+<span id="cb10-490"><a href="#cb10-490" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`facet_wrap()`</span>: Created wrapped facets</span>
+<span id="cb10-491"><a href="#cb10-491" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`facet_grid()`</span>: Created grid facets</span>
+<span id="cb10-492"><a href="#cb10-492" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`scale_*()`</span>: Various scale functions for customization</span>
+<span id="cb10-493"><a href="#cb10-493" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`theme_*()`</span>: Customized plot appearance</span>
 <span id="cb10-494"><a href="#cb10-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-495"><a href="#cb10-495" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>TidyTuesday. (2020). "Beyoncé and Taylor Swift Lyrics." <span class="co">[</span><span class="ot">GitHub Repository</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29)</span></span>
+<span id="cb10-495"><a href="#cb10-495" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📚 References</span></span>
 <span id="cb10-496"><a href="#cb10-496" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-497"><a href="#cb10-497" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Silge, J., &amp; Robinson, D. (2017). "Text Mining with R: A Tidy Approach." <span class="co">[</span><span class="ot">Online Book</span><span class="co">](https://www.tidytextmining.com/)</span></span>
+<span id="cb10-497"><a href="#cb10-497" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>TidyTuesday. (2020). "Beyoncé and Taylor Swift Lyrics." <span class="co">[</span><span class="ot">GitHub Repository</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29)</span></span>
 <span id="cb10-498"><a href="#cb10-498" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-499"><a href="#cb10-499" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Wickham, H. (2016). "ggplot2: Elegant Graphics for Data Analysis." Springer-Verlag New York. <span class="co">[</span><span class="ot">Online Documentation</span><span class="co">](https://ggplot2.tidyverse.org/)</span></span>
+<span id="cb10-499"><a href="#cb10-499" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Silge, J., &amp; Robinson, D. (2017). "Text Mining with R: A Tidy Approach." <span class="co">[</span><span class="ot">Online Book</span><span class="co">](https://www.tidytextmining.com/)</span></span>
 <span id="cb10-500"><a href="#cb10-500" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-501"><a href="#cb10-501" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>IFPI. (2021). "Global Music Report 2021." International Federation of the Phonographic Industry. <span class="co">[</span><span class="ot">Report Link</span><span class="co">](https://www.ifpi.org/our-industry/industry-data/)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb10-501"><a href="#cb10-501" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Wickham, H. (2016). "ggplot2: Elegant Graphics for Data Analysis." Springer-Verlag New York. <span class="co">[</span><span class="ot">Online Documentation</span><span class="co">](https://ggplot2.tidyverse.org/)</span></span>
+<span id="cb10-502"><a href="#cb10-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-503"><a href="#cb10-503" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>IFPI. (2021). "Global Music Report 2021." International Federation of the Phonographic Industry. <span class="co">[</span><span class="ot">Report Link</span><span class="co">](https://www.ifpi.org/our-industry/industry-data/)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

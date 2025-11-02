@@ -1,0 +1,88 @@
+---
+title: "Part 2: Shell Commands Exercise"
+format: html
+---
+
+## Download the data
+
+```{bash}
+#| echo: true
+curl -O https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2025/main/projects/01-project/students.csv
+```
+
+## Display file contents
+
+```{bash}
+#| echo: true
+cat students.csv
+```
+
+## Show first 5 lines
+
+```{bash}
+#| echo: true
+head -5 students.csv
+```
+
+## Show last 3 lines
+
+```{bash}
+#| echo: true
+tail -3 students.csv
+```
+
+## Count lines
+
+```{bash}
+#| echo: true
+wc -l students.csv
+```
+
+## Find Math students
+
+```{bash}
+#| echo: true
+grep "Math" students.csv
+```
+
+## Find female students
+
+```{bash}
+#| echo: true
+grep ",F," students.csv
+```
+
+## Sort by age
+
+```{bash}
+#| echo: true
+(head -1 students.csv && tail -n +2 students.csv | sort -t',' -k3 -n)
+```
+
+## Find unique subjects
+
+```{bash}
+#| echo: true
+tail -n +2 students.csv | cut -d',' -f6 | sort | uniq
+```
+
+## Calculate average grade
+
+```{bash}
+#| echo: true
+awk -F',' 'NR>1 {sum+=\$5; count++} END {print "Average Grade:", sum/count}' students.csv
+```
+
+## Replace Math with Mathematics
+
+```{bash}
+#| echo: true
+sed 's/Math/Mathematics/g' students.csv
+```
+
+## Run all commands together
+
+```{bash}
+#| echo: true
+./student_analysis.sh
+```

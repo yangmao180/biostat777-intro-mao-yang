@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About Me – Mao Yang</title>
+<title>Part 2: Shell Commands Exercise – Mao Yang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -263,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -287,20 +287,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#professional-interests" id="toc-professional-interests" class="nav-link active" data-scroll-target="#professional-interests">Professional Interests</a></li>
-  <li><a href="#educational-background" id="toc-educational-background" class="nav-link" data-scroll-target="#educational-background">Educational Background</a>
-  <ul class="collapse">
-  <li><a href="#master-of-science-in-biochemistry-and-molecular-biology" id="toc-master-of-science-in-biochemistry-and-molecular-biology" class="nav-link" data-scroll-target="#master-of-science-in-biochemistry-and-molecular-biology"><strong>Master of Science in Biochemistry and Molecular Biology</strong></a></li>
-  <li><a href="#bachelor-of-pharmacy" id="toc-bachelor-of-pharmacy" class="nav-link" data-scroll-target="#bachelor-of-pharmacy"><strong>Bachelor of Pharmacy</strong></a></li>
-  </ul></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a>
-  <ul class="collapse">
-  <li><a href="#laboratory-skills" id="toc-laboratory-skills" class="nav-link" data-scroll-target="#laboratory-skills">Laboratory Skills</a></li>
-  <li><a href="#technical-skills" id="toc-technical-skills" class="nav-link" data-scroll-target="#technical-skills">Technical Skills</a></li>
-  </ul></li>
-  <li><a href="#personal-interests" id="toc-personal-interests" class="nav-link" data-scroll-target="#personal-interests">Personal Interests</a></li>
-  <li><a href="#contact-information" id="toc-contact-information" class="nav-link" data-scroll-target="#contact-information">Contact Information</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#download-the-data" id="toc-download-the-data" class="nav-link active" data-scroll-target="#download-the-data">Download the data</a></li>
+  <li><a href="#display-file-contents" id="toc-display-file-contents" class="nav-link" data-scroll-target="#display-file-contents">Display file contents</a></li>
+  <li><a href="#show-first-5-lines" id="toc-show-first-5-lines" class="nav-link" data-scroll-target="#show-first-5-lines">Show first 5 lines</a></li>
+  <li><a href="#show-last-3-lines" id="toc-show-last-3-lines" class="nav-link" data-scroll-target="#show-last-3-lines">Show last 3 lines</a></li>
+  <li><a href="#count-lines" id="toc-count-lines" class="nav-link" data-scroll-target="#count-lines">Count lines</a></li>
+  <li><a href="#find-math-students" id="toc-find-math-students" class="nav-link" data-scroll-target="#find-math-students">Find Math students</a></li>
+  <li><a href="#find-female-students" id="toc-find-female-students" class="nav-link" data-scroll-target="#find-female-students">Find female students</a></li>
+  <li><a href="#sort-by-age" id="toc-sort-by-age" class="nav-link" data-scroll-target="#sort-by-age">Sort by age</a></li>
+  <li><a href="#find-unique-subjects" id="toc-find-unique-subjects" class="nav-link" data-scroll-target="#find-unique-subjects">Find unique subjects</a></li>
+  <li><a href="#calculate-average-grade" id="toc-calculate-average-grade" class="nav-link" data-scroll-target="#calculate-average-grade">Calculate average grade</a></li>
+  <li><a href="#replace-math-with-mathematics" id="toc-replace-math-with-mathematics" class="nav-link" data-scroll-target="#replace-math-with-mathematics">Replace Math with Mathematics</a></li>
+  <li><a href="#run-all-commands-together" id="toc-run-all-commands-together" class="nav-link" data-scroll-target="#run-all-commands-together">Run all commands together</a></li>
   </ul>
 </nav>
     </div>
@@ -310,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About Me</h1>
+<h1 class="title">Part 2: Shell Commands Exercise</h1>
 </div>
 
 
@@ -327,69 +325,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="professional-interests" class="level2">
-<h2 class="anchored" data-anchor-id="professional-interests">Professional Interests</h2>
-<p>My research focuses on understanding the molecular mechanisms underlying therapy resistance in cancer cells, with a particular emphasis on how aging processes contribute to this phenomenon. I am passionate about:</p>
-<ul>
-<li><strong>Cancer Biology</strong>: Investigating how cancer cells develop resistance to therapeutic interventions</li>
-<li><strong>Aging Research</strong>: Understanding the intersection between aging and cancer progression</li>
-<li><strong>Molecular Mechanisms</strong>: Exploring cellular pathways on molecular level</li>
-<li><strong>Translational Research</strong>: Bridging the gap between basic science and clinical applications</li>
-</ul>
+<section id="download-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="download-the-data">Download the data</h2>
+<pre class="{bash}"><code>#| echo: true
+curl -O https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2025/main/projects/01-project/students.csv</code></pre>
 </section>
-<section id="educational-background" class="level2">
-<h2 class="anchored" data-anchor-id="educational-background">Educational Background</h2>
-<section id="master-of-science-in-biochemistry-and-molecular-biology" class="level3">
-<h3 class="anchored" data-anchor-id="master-of-science-in-biochemistry-and-molecular-biology"><strong>Master of Science in Biochemistry and Molecular Biology</strong></h3>
-<p><strong><em>Johns Hopkins University</em></strong> <strong>(2024 - Present)</strong></p>
-<p>- Focus: Cancer therapy resistance and aging - Relevant coursework: Advanced Molecular Biology, Cancer Biology, Biochemical Mechanisms</p>
+<section id="display-file-contents" class="level2">
+<h2 class="anchored" data-anchor-id="display-file-contents">Display file contents</h2>
+<pre class="{bash}"><code>#| echo: true
+cat students.csv</code></pre>
 </section>
-<section id="bachelor-of-pharmacy" class="level3">
-<h3 class="anchored" data-anchor-id="bachelor-of-pharmacy"><strong>Bachelor of Pharmacy</strong></h3>
-<p><strong><em>Macau University of Science and Technology</em></strong> <strong>(2020 - 2025)</strong><br>
-</p>
+<section id="show-first-5-lines" class="level2">
+<h2 class="anchored" data-anchor-id="show-first-5-lines">Show first 5 lines</h2>
+<pre class="{bash}"><code>#| echo: true
+head -5 students.csv</code></pre>
 </section>
+<section id="show-last-3-lines" class="level2">
+<h2 class="anchored" data-anchor-id="show-last-3-lines">Show last 3 lines</h2>
+<pre class="{bash}"><code>#| echo: true
+tail -3 students.csv</code></pre>
 </section>
-<section id="skills" class="level2">
-<h2 class="anchored" data-anchor-id="skills">Skills</h2>
-<section id="laboratory-skills" class="level3">
-<h3 class="anchored" data-anchor-id="laboratory-skills">Laboratory Skills</h3>
-<ul>
-<li>Cell culture and maintenance</li>
-<li>Molecular biology techniques (PCR, cloning, transfection)</li>
-<li>Protein analysis (Western blot, immunofluorescence)</li>
-<li>Data analysis and statistics (R, Python, GraphPad)</li>
-</ul>
+<section id="count-lines" class="level2">
+<h2 class="anchored" data-anchor-id="count-lines">Count lines</h2>
+<pre class="{bash}"><code>#| echo: true
+wc -l students.csv</code></pre>
 </section>
-<section id="technical-skills" class="level3">
-<h3 class="anchored" data-anchor-id="technical-skills">Technical Skills</h3>
-<ul>
-<li>Programming: R, Python</li>
-<li>Data visualization and analysis</li>
-<li>Scientific writing and presentation</li>
-</ul>
+<section id="find-math-students" class="level2">
+<h2 class="anchored" data-anchor-id="find-math-students">Find Math students</h2>
+<pre class="{bash}"><code>#| echo: true
+grep "Math" students.csv</code></pre>
 </section>
+<section id="find-female-students" class="level2">
+<h2 class="anchored" data-anchor-id="find-female-students">Find female students</h2>
+<pre class="{bash}"><code>#| echo: true
+grep ",F," students.csv</code></pre>
 </section>
-<section id="personal-interests" class="level2">
-<h2 class="anchored" data-anchor-id="personal-interests">Personal Interests</h2>
-<p>Beyond the laboratory, I am an avid outdoor enthusiast and creative soul:</p>
-<ul>
-<li><strong>Photography</strong>: Capturing the beauty of nature through my lens</li>
-<li><strong>Hiking</strong>: Exploring mountain trails and connecting with nature</li>
-<li><strong>Fencing</strong>: Practicing discipline and strategy through sport</li>
-<li><strong>Cat Parent</strong>: Sharing my life with two wonderful cats, Orangey and Mimi</li>
-</ul>
+<section id="sort-by-age" class="level2">
+<h2 class="anchored" data-anchor-id="sort-by-age">Sort by age</h2>
+<pre class="{bash}"><code>#| echo: true
+(head -1 students.csv &amp;&amp; tail -n +2 students.csv | sort -t',' -k3 -n)</code></pre>
 </section>
-<section id="contact-information" class="level2">
-<h2 class="anchored" data-anchor-id="contact-information">Contact Information</h2>
-<p>Feel free to reach out to me for collaborations, research discussions, or just to connect!</p>
-<ul>
-<li><strong>Email</strong>: myang112@jh.edu</li>
-<li><strong>GitHub</strong>: <a href="https://github.com/yangmao180">yangmao180</a></li>
-</ul>
+<section id="find-unique-subjects" class="level2">
+<h2 class="anchored" data-anchor-id="find-unique-subjects">Find unique subjects</h2>
+<pre class="{bash}"><code>#| echo: true
+tail -n +2 students.csv | cut -d',' -f6 | sort | uniq</code></pre>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="calculate-average-grade" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-average-grade">Calculate average grade</h2>
+<pre class="{bash}"><code>#| echo: true
+awk -F',' 'NR&gt;1 {sum+=\$5; count++} END {print "Average Grade:", sum/count}' students.csv</code></pre>
+</section>
+<section id="replace-math-with-mathematics" class="level2">
+<h2 class="anchored" data-anchor-id="replace-math-with-mathematics">Replace Math with Mathematics</h2>
+<pre class="{bash}"><code>#| echo: true
+sed 's/Math/Mathematics/g' students.csv</code></pre>
+</section>
+<section id="run-all-commands-together" class="level2">
+<h2 class="anchored" data-anchor-id="run-all-commands-together">Run all commands together</h2>
+<pre class="{bash}"><code>#| echo: true
+./student_analysis.sh</code></pre>
 
 
 </section>

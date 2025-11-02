@@ -1,5 +1,6 @@
 ---
-title: "Example Analysis"
+title: "Example Analysis - 
+Taylor vs Beyoncé"
 format:
   html:
     toc: true
@@ -109,6 +110,7 @@ library(wordcloud)    # For word clouds
 library(here)         # For file paths
 library(knitr)        # For tables
 library(scales)       # For formatting
+library(mgcv)
 ```
 
 ### Data Import and Initial Processing
@@ -371,9 +373,9 @@ sentiment_analysis <- bind_rows(
       TRUE ~ "Neutral"
     ),
     word_count_cat = case_when(
-      total_words < 30 ~ "Short Songs",
-      total_words < 60 ~ "Medium Songs",
-      TRUE ~ "Long Songs"
+      total_words < 30 ~ "Short Songs (Words <30)",
+      total_words < 60 ~ "Medium Songs (30 < Words < 60)",
+      TRUE ~ "Long Songs (Wrods > 60)"
     )
   ) %>%
   filter(total_words >= 10)
@@ -400,7 +402,7 @@ p3 <- sentiment_analysis %>%
     subtitle = "Analyzing emotional content across different song categories",
     x = "Sentiment Score",
     y = "Density",
-    caption = "Based on Bing sentiment lexicon"
+    caption = "Based on Bing sentiment lexicon | Sentiment Score = (Positive - Negative) / (Positive + Negative)"
   ) +
   # Theme
   theme_minimal(base_size = 12) +
