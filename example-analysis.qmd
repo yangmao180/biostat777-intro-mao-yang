@@ -1,6 +1,5 @@
 ---
-title: "Example Analysis - 
-Taylor vs Beyoncé"
+title: "Example Analysis - Taylor vs Beyoncé"
 format:
   html:
     toc: true
@@ -70,7 +69,7 @@ knitr::opts_chunk$set(
 
 ### Data Sources
 
-We're analyzing three comprehensive datasets from [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29):
+We're analyzing three datasets from [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-09-29):
 
 -   **💿 Sales Data**: Album sales by country, release dates, chart performance
 -   **🎵 Beyoncé Lyrics**: Complete song lyrics, album information, song metadata
@@ -110,7 +109,6 @@ library(wordcloud)    # For word clouds
 library(here)         # For file paths
 library(knitr)        # For tables
 library(scales)       # For formatting
-library(mgcv)
 ```
 
 ### Data Import and Initial Processing
@@ -242,7 +240,7 @@ artist_comparison %>%
 ### Plot 1: Market Distribution Analysis
 
 ```{r plot-market-distribution}
-#| fig-cap: "Geographic distribution of album sales reveals different market strategies"
+#| fig-cap: "Geographic distribution of album sales reveals different market strategies. Beyoncé's album sales demonstrate a more balanced global distribution, with substantial contributions from the United States, the United Kingdom, and additional international markets. In contrast, Taylor Swift's sales are predominantly concentrated in the United States, with smaller shares from the United Kingdom and other regions. These patterns indicate that Beyoncé possesses a broader international reach, whereas Taylor Swift's commercial success is more reliant on the United States market."
 #| fig-height: 8
 
 # Create stacked percentage bar chart
@@ -286,7 +284,7 @@ print(p1)
 ### Plot 2: Temporal Sales Trends with Faceting
 
 ```{r plot-temporal-trends}
-#| fig-cap: "Album sales trends reveal different trajectories across markets"
+#| fig-cap: "Album sales trends reveal different trajectories across markets. Taylor Swift consistently achieves higher and more stable album sales than Beyoncé in the US market. In the UK market, Beyoncé initially maintained a strong presence; however, Taylor Swift's sales increased substantially over time and eventually surpassed those of Beyoncé. On a global scale, Beyoncé exhibits a more consistent appeal, whereas Taylor Swift's album sales fluctuate to a greater extent but ultimately surpass Beyoncé’s worldwide sales."
 #| fig-height: 10
 
 # Create faceted time series plot
@@ -344,7 +342,7 @@ print(p2)
 ### Plot 3: Sentiment Analysis with Facet Grid
 
 ```{r plot-sentiment-grid}
-#| fig-cap: "Lyrical sentiment patterns reveal artistic differences"
+#| fig-cap: "Lyrical sentiment patterns reveal artistic differences. Beyoncé's songs demonstrate a strong concentration around neutral sentiment (score of 0) across all length categories, with relatively narrow emotional ranges. In contrast, Taylor Swift's lyrics exhibit more diverse emotional content, with notable peaks in both positive and negative territories, particularly in her medium-length songs (30+ words)."
 #| fig-height: 10
 
 # Prepare sentiment data for both artists
@@ -463,7 +461,7 @@ This comprehensive analysis of Beyoncé and Taylor Swift's careers reveals disti
 
 ## 📊 Functions Used from Required Packages
 
-### **dplyr functions used (7+):**
+### **dplyr functions used (8):**
 
 -   `mutate()`: Created new variables and transformed data
 -   `select()`: Selected specific columns
@@ -480,7 +478,7 @@ This comprehensive analysis of Beyoncé and Taylor Swift's careers reveals disti
 -   `pivot_wider()`: Reshaped data from long to wide
 -   `unite()`: Combined columns into single identifier
 
-### **ggplot2 functions used (8+):**
+### **ggplot2 functions used (9):**
 
 -   `ggplot()`: Initialized plots
 -   `geom_bar()`: Created bar charts
@@ -500,4 +498,4 @@ This comprehensive analysis of Beyoncé and Taylor Swift's careers reveals disti
 
 3.  Wickham, H. (2016). "ggplot2: Elegant Graphics for Data Analysis." Springer-Verlag New York. [Online Documentation](https://ggplot2.tidyverse.org/)
 
-4.  IFPI. (2021). "Global Music Report 2021." International Federation of the Phonographic Industry. [Report Link](https://www.ifpi.org/our-industry/industry-data/)
+4.  IFPI. (2024). "Global Music Report 2021." International Federation of the Phonographic Industry. [Report Link](https://www.ifpi.org/our-industry/industry-data/)
